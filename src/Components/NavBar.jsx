@@ -1,10 +1,13 @@
 import React from "react";
+import './NavBarCSS.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="#">
-        
+    
                 GetYourWay.com
             </a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,10 +25,13 @@ const NavBar = () => {
                         <a className="nav-link" href="#">Sign up</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Login</a>
+                        <a className="nav-link" href="#">Log in</a>
+        
                     </li>
                 </ul>
+                <FontAwesomeIcon icon={faUser} style={{color: "#a8b2c2"}} /> {}
             </div>
+          
         </nav>
     );
 }
