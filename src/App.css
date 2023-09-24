@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar-brand{
+  font-family: TiemposHeadline, georgia, serif;
+  color: aquamarine;
+}
