@@ -1,0 +1,9 @@
+.heroTaglineContainer {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding-left: 55px;
+
+}
