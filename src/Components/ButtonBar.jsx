@@ -1,14 +1,17 @@
 import React from "react";
 import AutocompleteButton from "./AutocompleteButton";
+import SearchButton from "./SearchButton";
 
 function ButtonBar() {
   return (
     <>
     <div className="ButtonBarContainer">
-    <AutocompleteButton className="depatureButton"/>
     <AutocompleteButton/>
     <AutocompleteButton/>
     <AutocompleteButton/>
+    <AutocompleteButton/>
+    <AutocompleteButton/>
+    <SearchButton/>
     </div>
     </>
   )
