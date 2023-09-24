@@ -59,7 +59,7 @@ function AutocompleteButton() {
   return (
     <>
       <div className="buttonContainer">
-        <input
+        <input className="autocompleteInputField"
           type="text"
           value={inputValue}
           onChange={handleInputChange}

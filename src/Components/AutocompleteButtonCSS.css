@@ -1,25 +1,45 @@
+
+/* outer container */
 .ButtonBarContainer {
   display: flex;
   flex-direction: row;
+  background-color: rgb(150, 62, 150);
 }
+
+/* input container div */
 .buttonContainer {
   margin: 0px 25px 0px 25px;
+  padding: 20px 0px 20px 0px;
 }
+
+/* onClick border (removed) */
+.autocompleteInputField:focus {
+  outline: none;
+}
+
 .autocomplete-container {
     position: relative;
     width: 240px;
     height: 300px;
     margin: 20px auto;
-
   }
   
   input[type="text"] {
     width: 240px;
     height: 100px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 4px solid #ffffff;
     border-radius: 12px;
+
     font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+
+    background-color: rgba(242, 234, 244, 0.5);;
+  }
+
+  ::placeholder {
+    color: #fff;
   }
 
   .suggestion-list {
@@ -44,7 +64,8 @@
     transition: background-color 0.3s;
   }
   
+  /* hover colour */
   .suggestion-list li:hover {
-    background-color: #f0f0f0;
+    background-color: #e4b1ef;
   }
   
