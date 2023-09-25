@@ -2,8 +2,8 @@ import logo from './logo.svg';
 import React from 'react';
 import './App.css';
 import NavBar from './Components/NavBar';
-import ButtonBar from './Components/ButtonBar';
-import HeroTagline from './Components/HeroTagline';
+// import ButtonBar from './Components/ButtonBar';
+// import HeroTagline from './Components/HeroTagline';
 import Footer from './Components/Footer';
 import Home from './Pages/Home';
 import Flights from './Pages/Flights';
@@ -17,14 +17,13 @@ function App() {
     <Router>
     <NavBar/>
     <Routes>
-        <Route path="/Home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/Flights" element={<Flights />} />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp />} />
         
       </Routes>
-    <ButtonBar/>
-    <HeroTagline/>
+    
     <Footer/>
 
    

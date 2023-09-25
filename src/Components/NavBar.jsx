@@ -6,7 +6,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="home">
+            <a className="navbar-brand" href="/">
     
                 GetYourWay.com
             </a>
