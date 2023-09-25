@@ -6,7 +6,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="home">
     
                 GetYourWay.com
             </a>
@@ -16,16 +16,16 @@ const NavBar = () => {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item active">
-                        <a className="nav-link" href="#">Flights</a>
+                        <a className="nav-link" href="flights">Flights</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Weather</a>
+                        <a className="nav-link" href="weather">Weather</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Sign up</a>
+                        <a className="nav-link" href="signUp">Sign up</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Log in</a>
+                        <a className="nav-link" href="SignIn">Log in</a>
         
                     </li>
                 </ul>
