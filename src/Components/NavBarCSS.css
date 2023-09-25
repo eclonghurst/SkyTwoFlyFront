@@ -1,7 +1,8 @@
 .navbar-brand{
-    font-family: 'Playfair Display', serif;
-    color: black;
-    font-size: 40px !important;
+    font-family: 'Merriweather', serif !important;
+    color:#313232 !important;
+    font-size: 50px !important;
+    font-weight: bold;
     
 }
 
