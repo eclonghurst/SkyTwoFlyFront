@@ -1,6 +1,8 @@
 
+/* Before changing this ccs style class to .fixed-bottom, it was .container*/
+/* using .fixed-bottom here allowed the background colour whereas .container didn't work once 'fixed-bottom' was added to the footer className*/
 
-.container{background: rgb(29,0,65);
+.fixed-bottom{background: rgb(29,0,65);
     background: linear-gradient(90deg, rgba(29,0,65,1) 0%, rgba(121,9,110,1) 50%, rgba(136,42,177,1) 100%);}
 
 
