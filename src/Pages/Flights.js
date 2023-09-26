@@ -1,8 +1,14 @@
 import React from "react";
+import ButtonBar from "../Components/ButtonBar";
+import HeroTagline from "../Components/HeroTagline";
 
 function Flights(){
-    return<h1>GetYourWay.com Flights</h1>,
-    <h2>Please Select your Flight!</h2>
+   return(
+        <>
+        <ButtonBar/>
+
+</>
+    );
 }
 
 export default Flights;
