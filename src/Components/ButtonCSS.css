@@ -30,7 +30,7 @@
     margin: 20px auto;
   }
   
-  input[type="text"] {
+  .autocompleteInputField{
     width: 210px;
     height: 100px;
     padding: 10px;
@@ -44,7 +44,7 @@
     background-color: rgba(255, 255, 255, 0.3);;
   }
   
-  input[type=text]:hover{
+  .autocompleteInputField:hover{
     box-shadow: 0 0 5pt 0.5pt #ffffff;
   }
 
