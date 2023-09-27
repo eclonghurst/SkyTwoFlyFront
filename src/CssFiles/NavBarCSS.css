@@ -1,6 +1,7 @@
 .navbar {
     background: linear-gradient(90deg, rgba(29,0,65,1) 0%, rgba(121,9,110,1) 50%, rgba(136,42,177,1) 100%);
     color: white;
+    padding-top: 25px !important;
 }
 
 .navbar-brand{
@@ -8,6 +9,7 @@
     color:#ffffff !important;
     font-size: 50px !important;
     font-weight: bold;
+    padding-left: 80px;
 }
 
 .nav-link{
