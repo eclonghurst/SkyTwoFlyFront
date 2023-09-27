@@ -1,5 +1,5 @@
 import React from 'react';
-import './HeroSectionCSS.css';
+import '../CssFiles/HeroSectionCSS.css';
 
 
 function HeroTagline() {
