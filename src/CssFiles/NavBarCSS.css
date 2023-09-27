@@ -1,20 +1,21 @@
-.navbar {
+nav.navbar {
     background: linear-gradient(90deg, rgba(29,0,65,1) 0%, rgba(121,9,110,1) 50%, rgba(136,42,177,1) 100%);
-    color: white;
-    padding-top: 25px !important;
+    padding-top: 25px;
+}
+#navbarNav {
+    display: flex;
 }
 
-.navbar-brand{
-    font-family: 'Merriweather', serif !important;
-    color:#ffffff !important;
-    font-size: 50px !important;
+a.navbar-brand{
+    font-family: 'Merriweather', serif;
+    color:#ffffff;
+    font-size: 50px;
     font-weight: bold;
     padding-left: 80px;
 }
 
-.nav-link{
-    color: white !important;
-    padding-right: 100px !important;
+a.nav-link{
+    color: white;
 }
 
 .brand-logo {
