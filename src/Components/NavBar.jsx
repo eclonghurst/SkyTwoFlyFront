@@ -8,7 +8,6 @@ const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="navbar-brand" to="/">
-    
                 GetYourWay.com
             </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +29,7 @@ const NavBar = () => {
         
                     </li>
                 </ul>
-                <FontAwesomeIcon icon={faUser} style={{color: "#a8b2c2"}} /> {}
+                <FontAwesomeIcon className="accountIcon" icon={faUser} style={{color: "#a8b2c2"}} /> {}
             </div>
           
         </nav>

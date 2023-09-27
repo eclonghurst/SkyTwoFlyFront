@@ -12,6 +12,7 @@
 
 .nav-link{
     color: white !important;
+    padding-right: 100px !important;
 }
 
 .brand-logo {
@@ -24,4 +25,8 @@
     padding-right: 15px;
     padding-left: 15px;
 
+}
+
+.accountIcon {
+    margin-right: 100px;
 }
