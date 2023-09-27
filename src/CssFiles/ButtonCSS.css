@@ -6,6 +6,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
   height: 200px;
   /* background-color: rgb(150, 62, 150); */
   background: rgb(29,0,65);
