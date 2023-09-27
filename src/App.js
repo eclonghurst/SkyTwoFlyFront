@@ -9,6 +9,7 @@ import Home from './Pages/Home';
 import Flights from './Pages/Flights';
 import SignIn from './Pages/SignIn';
 import SignUp from './Pages/SignUp';
+import Flight from './Components/Flight';
 
 import { BrowserRouter as Router, Routes, Route }
     from 'react-router-dom';
@@ -22,6 +23,7 @@ function App() {
         <Route path="/Flights" element={<Flights />} />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/flight" element={<Flight/>}/>
       </Routes>
     
     <Footer/>
