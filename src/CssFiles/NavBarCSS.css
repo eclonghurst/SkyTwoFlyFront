@@ -1,3 +1,7 @@
+.navbar {
+    background: linear-gradient(90deg, rgba(29,0,65,1) 0%, rgba(121,9,110,1) 50%, rgba(136,42,177,1) 100%);
+}
+
 .navbar-brand{
     font-family: 'Merriweather', serif !important;
     color:#313232 !important;
