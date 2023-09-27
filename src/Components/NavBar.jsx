@@ -29,7 +29,7 @@ const NavBar = () => {
         
                     </li>
                 </ul>
-                <FontAwesomeIcon className="accountIcon" icon={faUser} style={{color: "#a8b2c2"}} /> {}
+                <FontAwesomeIcon className="accountIcon" icon={faUser} style={{color: "#ffffff"}} /> {}
             </div>
           
         </nav>
