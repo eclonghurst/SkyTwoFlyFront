@@ -12,7 +12,15 @@ function Flight(){
                 <img src={airlineLogo} alt="Airline logo"/> 
             </div>
             <div className='container-flight-details'>
-            <p>Travel details</p>
+            <div className='departure'>
+MAN
+            </div>
+            <div className='flight-pointer'>
+
+            </div>
+            <div className='destination'>
+DUS
+            </div>
             </div>
             <div className='container-flight-details-price'>
 <p>££</p>
