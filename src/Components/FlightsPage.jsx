@@ -1,4 +1,6 @@
 import React from "react";
+import Flight from "./Flight";
+import Weather from "./Weather";
 
 function FlightsPage(){
 
@@ -13,3 +15,5 @@ function FlightsPage(){
         </>
     )
 }
+
+export default FlightsPage;

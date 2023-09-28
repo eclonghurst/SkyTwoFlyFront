@@ -11,6 +11,7 @@ import Flights from './Pages/Flights';
 import SignIn from './Pages/SignIn';
 import SignUp from './Pages/SignUp';
 import Flight from './Components/Flight';
+import FlightsPage from './Components/FlightsPage';
 
 import { BrowserRouter as Router, Routes, Route }
     from 'react-router-dom';
@@ -21,7 +22,7 @@ function App() {
     <NavBar/>
     <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Flights" element={<Flights />} />
+        <Route path="/Flights" element={<FlightsPage />} />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/flight" element={<Flight/>}/>

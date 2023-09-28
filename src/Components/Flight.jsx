@@ -7,7 +7,7 @@ function Flight(){
 
     return(
         <>
-        <div className='container-flight' style="flex-grow:2">
+        <div className='container-flight'>
             <div className='container-airline-details'>
                 <img src={airlineLogo} alt="Airline logo"/> 
 

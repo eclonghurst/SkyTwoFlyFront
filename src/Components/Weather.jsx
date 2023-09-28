@@ -1,9 +1,10 @@
 import React from "react";
+import "../CssFiles/Weather.css"
 
 function Weather(){
     return(
         <>
-        <div className="weather" style={"flex-grow:1"}>
+        <div className="weather">
         <p>Weather</p>
         </div>
         </>
