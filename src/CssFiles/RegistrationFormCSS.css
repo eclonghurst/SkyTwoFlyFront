@@ -11,3 +11,16 @@
     align-items: center;
     justify-content: center;
 }
+
+.backdrop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+}
