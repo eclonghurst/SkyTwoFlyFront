@@ -6,7 +6,7 @@ function FlightsPage(){
         <>
 <div style="display: flex">
     <Flight/>
-    
+    <Weather/>
 
 </div>
 
