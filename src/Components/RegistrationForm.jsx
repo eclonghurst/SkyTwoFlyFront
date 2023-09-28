@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import '../CssFiles/RegistrationFormCSS.css';
 
 function RegistrationForm() {
-  console.log('Registerastion is rendered')
-  
-  const [firstName,setFirstName]= useState("")
-  const [lastName,setLastName]= useState("")
-  const [email,setEmail]= useState("")
-  const [password,setPassword]= useState("")
+  const [isVisible, setIsVisible] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -17,58 +16,38 @@ function RegistrationForm() {
     console.log(`Password: ${password}`);
   };
 
-
-return(
-<div className='backdrop'>
-  <div className='modal'>
-
-    <form onSubmit={handleSubmit}>
-      <label>
-        First Name:
-        <input 
-        type = "text"
-        value={firstName}
-        onChange={(event) => setFirstName(event.target.value)}/>
-
-      </label>
-      <br/>
-      <label>
-        Last Name:
-        <input 
-        type = "text"
-        value={lastName}
-        onChange={(event) => setLastName(event.target.value)}/>
-
-      </label>
-      <br/>
-      <label>
-        Email:
-        <input 
-        type = "text"
-        value={email}
-        onChange={(event) => setEmail(event.target.value)}/>
-      </label>
-
-      <br/>
-      <label>
-        Password:
-        <input 
-        type = "text"
-        value={password}
-        onChange={(event) => setPassword(event.target.value)}/>
-
-      </label>
-      <br/>
-      <button type = "submit">Submit</button>
-    </form>
-  </div>
-
-
-
-</div>
-
-)
-
-};
+  return (
+    <div>
+      <button onClick={() => setIsVisible(true)}>Register</button>
+      {isVisible && (
+        <div className='backdrop' onClick={() => setIsVisible(false)}>
+          {/* <div className='modal' onClick={(e) => e.stopPropagation()}> */}
+            <div className="form-container" style={{ marginTop: '0px' }}>
+              <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <label htmlFor="firstName" className="form-label">First Name</label>
+                  <input type="text" id="firstName" name="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="form-control" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="lastName" className="form-label">Last Name</label>
+                  <input type="text" id="lastName" name="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)} className="form-control" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email" className="form-label">Email</label>
+                  <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="password" className="form-label">Password</label>
+                  <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-control" />
+                </div>
+                <button type="submit" className="btn btn-primary">Register</button>
+              </form>
+            </div>
+          </div>
+        // </div>
+      )}
+    </div>
+  );
+}
 
 export default RegistrationForm;
