@@ -1,0 +1,36 @@
+nav.navbar {
+    background: linear-gradient(90deg, rgba(29,0,65,1) 0%, rgba(121,9,110,1) 50%, rgba(136,42,177,1) 100%);
+    padding-top: 25px;
+}
+
+a.navbar-brand{
+    font-family: 'Merriweather', serif;
+    color:#ffffff;
+    font-size: 50px;
+    font-weight: bold;
+    padding-left: 80px;
+}
+
+a.nav-link{
+    color: white;
+}
+
+.brand-logo {
+    height: 30px;
+    width: auto; 
+    margin-right: 10px; 
+}
+
+ul.navbar-nav{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.accountIcon {
+    margin-right: 100px;
+}
+@media (min-width: 992px){
+.navbar-expand-lg .navbar-collapse {
+    justify-content: flex-end;
+}
+}

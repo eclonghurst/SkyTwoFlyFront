@@ -1,0 +1,13 @@
+
+.registerTitle{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px 40px 0px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
