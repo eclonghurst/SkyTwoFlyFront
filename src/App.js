@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import React from 'react';
 import './App.css';
+import Carousel from './Components/Carousel';
 import NavBar from './Components/NavBar';
 // import ButtonBar from './Components/ButtonBar';
 // import HeroTagline from './Components/HeroTagline';
@@ -18,6 +19,7 @@ function App() {
   return (
     <Router>
     <NavBar/>
+    <Carousel/>
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Flights" element={<Flights />} />
