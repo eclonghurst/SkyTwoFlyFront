@@ -2,10 +2,22 @@
 /* Before changing this ccs style class to .fixed-bottom, it was .container*/
 /* using .fixed-bottom here allowed the background colour whereas .container didn't work once 'fixed-bottom' was added to the footer className*/
 
-.fixed-bottom{background: rgb(29,0,65);
-    background: linear-gradient(90deg, rgba(29,0,65,1) 0%, rgba(121,9,110,1) 50%, rgba(136,42,177,1) 100%);}
+/* changed from position: fixed; to sticky and deleted class fixed-bottom, replaced with fixed */
+.fixed{background: rgb(29,0,65);
+    background: linear-gradient(90deg, rgba(29,0,65,1) 0%, rgba(121,9,110,1) 50%, rgba(136,42,177,1) 100%);
+    position: sticky;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+    width: 100%;
+}
 
-
+#footerContainer {
+    margin: 0;
+    max-width: 4000px;
+    --bs-gutter-x: 0rem;
+}
 
 .white-footer-text{color: white !important};
 

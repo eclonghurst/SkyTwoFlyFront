@@ -11,6 +11,10 @@ a.navbar-brand{
     padding-left: 80px;
 }
 
+a.navbar-brand:hover{
+    color: rgb(255, 229, 177);
+}
+
 a.nav-link{
     color: white;
 }
@@ -24,13 +28,18 @@ a.nav-link{
 ul.navbar-nav{
     padding-right: 15px;
     padding-left: 15px;
+    :hover {
+        color: rgb(255, 226, 167);
+    }
 }
 
 .accountIcon {
     margin-right: 100px;
 }
+
 @media (min-width: 992px){
 .navbar-expand-lg .navbar-collapse {
     justify-content: flex-end;
+    
 }
 }

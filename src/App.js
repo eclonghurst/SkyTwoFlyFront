@@ -19,7 +19,6 @@ function App() {
   return (
     <Router>
     <NavBar/>
-    <Carousel/>
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Flights" element={<Flights />} />
