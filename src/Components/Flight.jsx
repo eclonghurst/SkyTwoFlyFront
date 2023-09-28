@@ -8,15 +8,16 @@ function Flight(){
     return(
         <>
         <div className='container-flight'>
-            <div className='container-flight-details'>
+            <div className='container-airline-details'>
                 <img src={airlineLogo} alt="Airline logo"/> 
 
             </div>
             <div className='container-flight-details'>
 <p>Travel details</p>
             </div>
-            <div className='container-flight-details'>
-<p>price</p>
+            <div className='container-flight-details-price'>
+<p>££</p>
+<button className='book-button'>Book</button>
             </div>
 
 
