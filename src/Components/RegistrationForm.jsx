@@ -18,11 +18,13 @@ function RegistrationForm() {
 
   return (
     <div>
-      <button onClick={() => setIsVisible(true)}>Register</button>
-      {isVisible && (
-        <div className='backdrop' onClick={() => setIsVisible(false)}>
-          {/* <div className='modal' onClick={(e) => e.stopPropagation()}> */}
-            <div className="form-container" style={{ marginTop: '0px' }}>
+    <button onClick={() => setIsVisible(true)}>Register</button>
+    {isVisible && (
+      <div className='backdrop' onClick={() => setIsVisible(false)}>
+
+          <div className="form-container" style={{ marginTop: '0px' }}
+          onClick={(e) => e.stopPropagation()}
+          >
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="firstName" className="form-label">First Name</label>
@@ -44,7 +46,7 @@ function RegistrationForm() {
               </form>
             </div>
           </div>
-        // </div>
+
       )}
     </div>
   );
