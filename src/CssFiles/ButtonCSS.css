@@ -4,13 +4,16 @@
 .ButtonBarContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   height: 280px;
   /* background-color: rgb(150, 62, 150); */
   background: rgb(29,0,65);
   background: linear-gradient(90deg, rgba(29,0,65,1) 0%, rgba(121,9,110,1) 50%, rgba(136,42,177,1) 100%);
+}
+.buttonContainer {
+  padding: 10px;
 }
 
 /* onClick border (removed) */
@@ -82,6 +85,7 @@
   .searchButton{
     width: 60px;
     height: 80px;
+    padding-left: 10px;
   }
 
   .searchButton:hover{

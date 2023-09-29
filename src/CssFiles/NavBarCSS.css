@@ -1,4 +1,5 @@
 nav.navbar {
+    display: flex;
     background: linear-gradient(90deg, rgba(29,0,65,1) 0%, rgba(121,9,110,1) 50%, rgba(136,42,177,1) 100%);
     padding-top: 25px;
 }
@@ -8,7 +9,6 @@ a.navbar-brand{
     color:#ffffff;
     font-size: 50px;
     font-weight: bold;
-    padding-left: 80px;
 }
 
 a.navbar-brand:hover{
@@ -39,7 +39,7 @@ ul.navbar-nav{
 
 @media (min-width: 992px){
 .navbar-expand-lg .navbar-collapse {
-    justify-content: flex-end;
-    
+    justify-content:center;
+    padding-left: 500px;
 }
 }
