@@ -15,6 +15,7 @@ function RegistrationForm({isVisible,setIsVisible}) {
     console.log(`Email: ${email}`);
     console.log(`Password: ${password}`);
   };
+
   if(!isVisible) return null;
   
   return (
@@ -23,8 +24,13 @@ function RegistrationForm({isVisible,setIsVisible}) {
       <div className='backdrop' onClick={() => setIsVisible(false)}>
 
           <div className="form-container" style={{ marginTop: '0px' }}
+
           onClick={(e) => e.stopPropagation()}
           >
+
+            <h1>Get Your Way</h1>
+            <h3>Sign up for the full experience!</h3>
+            <p>Plan your trips,monitor prices, and view your bookings</p>
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="firstName" className="form-label">First Name</label>
