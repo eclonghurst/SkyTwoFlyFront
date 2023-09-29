@@ -7,9 +7,10 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg">
-            <Link className="navbar-brand" to="/">
-                GetYourWay.com
-            </Link>
+            <div id="navbar-container">
+                <Link className="navbar-brand" id="nav-brand" to="/">
+                    GetYourWay.com
+                 </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -19,18 +20,15 @@ const NavBar = () => {
                         <Link className="nav-link" to="/Flights">Flights</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="weather">Weather</Link>
-                    </li>
-                    <li className="nav-item">
                         <Link className="nav-link" to="signUp">Sign up</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="SignIn">Log in</Link>
-        
                     </li>
                 </ul>
                 <FontAwesomeIcon className="accountIcon" icon={faUser} style={{color: "#ffffff"}} /> {}
             </div>
+        </div>
           
         </nav>
     );
