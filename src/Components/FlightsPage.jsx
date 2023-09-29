@@ -2,6 +2,7 @@ import React from "react";
 import Flight from "./Flight";
 import Weather from "./Weather";
 import "../CssFiles/FlightPageCSS.css"
+import "../CssFiles/Weather.css"
 
 function FlightsPage(){
 

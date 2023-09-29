@@ -7,3 +7,15 @@
     margin-top:30px;
     border-radius: 12px;
 }
+
+.weather-icon{
+    width:20%;
+}
+
+/* .city-country-header, .weather-icon{display: inline ;} */
+
+.location-and-icon{display: flex;
+align-items: center;
+justify-content: flex-start;}
+
+

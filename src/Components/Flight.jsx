@@ -9,7 +9,7 @@ function Flight(){
         <>
         <div className='flight-panel'>
             <div className='container-airline-details'>
-                <img src={airlineLogo} alt="Airline logo"/> 
+                <img src={airlineLogo} alt="Airline logo" className="airline-logo"/> 
             </div>
             <div className='container-flight-details'>
             <div className='departure'>

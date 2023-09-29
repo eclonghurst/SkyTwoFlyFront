@@ -1,8 +1,10 @@
 .flight-page-container {
     display: flex;
+    
 }
 
 .flight-container {
     flex-direction: column;
-    flex-grow:2;
+    flex-grow:3;
+    
 }

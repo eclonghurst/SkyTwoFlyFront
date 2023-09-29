@@ -2,15 +2,20 @@
     display:flex;
     justify-content: space-evenly;
     border: 2px solid;
-    margin-top: 100px;
+    margin-top: 70px;
     margin-right:30px;
     margin-left:30px;
     border-radius: 12px;
+
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 .container-airline-details{
     display:flex;
-    flex-grow: 1
+    flex-grow: 1;
+
+    /* padding: 9px; */
 }
 
 .container-flight-details{
@@ -41,4 +46,12 @@
     background: rgba(136,42,177,1);
     border-radius: 12px;
     border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.book-button:hover{
+    background: #ff91ee
+}
+
+.airline-logo{
+    padding:5px
 }

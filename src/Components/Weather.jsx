@@ -30,9 +30,10 @@ useEffect(function(){
     return(
         <>
         <div className="weather">
-        <h2>Weather at your chosen destination...</h2>
-        <h3>{locationDetails.city}, {locationDetails.country}</h3>
-        <img src={weather.iconUrl} alt="weather icon" />
+        <div className="location-and-icon">
+        <h2 className="city-country-hearder">{locationDetails.city}, {locationDetails.country}</h2>
+        <img className="weather-icon" src={weather.iconUrl} alt="weather icon" />
+        </div>
         <table>
             <tr>
                 <th>Condition:  </th>
