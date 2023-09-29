@@ -9,8 +9,13 @@
   flex-wrap: wrap;
   height: 280px;
   /* background-color: rgb(150, 62, 150); */
-  background: rgb(29,0,65);
-  background: linear-gradient(90deg, rgba(29,0,65,1) 0%, rgba(121,9,110,1) 50%, rgba(136,42,177,1) 100%);
+  background: rgb(29, 0, 65);
+  background: linear-gradient(
+    90deg,
+    rgba(29, 0, 65, 1) 0%,
+    rgba(121, 9, 110, 1) 50%,
+    rgba(136, 42, 177, 1) 100%
+  );
 }
 
 .buttonBar-form {
@@ -28,85 +33,83 @@
 }
 
 .autocomplete-container {
-    position: relative;
-    width: 240px;
-    height: 300px;
-    margin: 20px auto;
-  }
-  
-  .autocompleteInputField{
-    width: 210px;
-    height: 100px;
-    padding: 10px;
-    border: 4px solid rgba(255, 255, 255, 0.7);
-    border-radius: 12px;
+  position: relative;
+  width: 240px;
+  height: 300px;
+  margin: 20px auto;
+}
 
-    font-size: 16px;
-    font-weight: 400;
-    color: #fff;
+.autocompleteInputField {
+  width: 210px;
+  height: 100px;
+  padding: 10px;
+  border: 4px solid rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
 
-    background-color: rgba(255, 255, 255, 0.3);;
-  }
-  
-  .autocompleteInputField:hover{
-    box-shadow: 0 0 5pt 0.5pt #ffffff;
-  }
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
 
-  ::placeholder {
-    color: #fff;
-  }
+  background-color: rgba(255, 255, 255, 0.3);
+}
 
+.autocompleteInputField:hover {
+  box-shadow: 0 0 5pt 0.5pt #ffffff;
+}
 
-  /* SUGGESTIONS */
+::placeholder {
+  color: #fff;
+}
 
-  .suggestion-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-left: 10px;
-    position: absolute;
-    z-index: 1;
-    width: 190px;
-    max-height: 150px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    border-top: none;
-    border-radius: 0 0 12px 12px;
-    background-color: #fff;
-  }
-  
-  .suggestion-list li {
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  /* hover colour */
-  .suggestion-list li:hover {
-    background-color: #cd8eeb;
-  }
+/* SUGGESTIONS */
 
-  /* SEARCH BUTTON SVG*/
+.suggestion-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+  position: absolute;
+  z-index: 1;
+  width: 190px;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  background-color: #fff;
+}
 
-  .searchSvg{
-    width: 60px;
-    height: 80px;
-    padding-left: 10px;
-  }
+.suggestion-list li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-  .searchButton:hover{
-    cursor: pointer;
-    filter: drop-shadow(0px 0px 4px #ff91ee)
-  }
+/* hover colour */
+.suggestion-list li:hover {
+  background-color: #cd8eeb;
+}
 
-  .searchButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
+/* SEARCH BUTTON SVG*/
+
+.searchSvg {
+  width: 60px;
+  height: 80px;
+  padding-left: 10px;
+}
+
+.searchButton:hover {
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 4px #ff91ee);
+}
+
+.searchButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
 }
 
 .searchButton:focus {
-    outline: none;
+  outline: none;
 }
-  
