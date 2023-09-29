@@ -16,6 +16,7 @@ import RegistrationForm from './Components/RegistrationForm';
 
 import { BrowserRouter as Router, Routes, Route }
     from 'react-router-dom';
+import BookingPage from './Components/BookingPage';
 
 function App() {
   const[isVisible,setIsVisible] = useState(false)
@@ -28,6 +29,7 @@ function App() {
         <Route path="/Flights" element={<FlightsPage />} />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/flight" element={<Flight/>}/>
+        <Route path="/BookingPage" element={<BookingPage/>}/>
       </Routes>
     
     <Footer/>

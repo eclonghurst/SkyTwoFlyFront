@@ -11,7 +11,7 @@ const [weather, setWeather] = useState('');
 const [locationDetails, setLocationDetails] = useState('');
 
 const getWeather = function(){
-    axios.get("http://api.weatherapi.com/v1/current.json?key=38387323c061422fae1200751232809&q=Cairo")
+    axios.get("http://api.weatherapi.com/v1/current.json?key=38387323c061422fae1200751232809&q=Pefkos")
     .then(function(response){
         console.log("RESPONSE RECEIVED");
         setWeather({condition: response.data.current.condition.text,
