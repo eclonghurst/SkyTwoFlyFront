@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg">
-                <Link className="navbar-brand" to="/">
+            <div id="navbar-container">
+                <Link className="navbar-brand" id="nav-brand" to="/">
                     GetYourWay.com
                  </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,6 +28,7 @@ const NavBar = () => {
                 </ul>
                 <FontAwesomeIcon className="accountIcon" icon={faUser} style={{color: "#ffffff"}} /> {}
             </div>
+        </div>
           
         </nav>
     );
