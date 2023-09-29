@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import '../CssFiles/RegistrationFormCSS.css';
 
 function RegistrationForm({isVisible,setIsVisible}) {
@@ -7,6 +7,17 @@ function RegistrationForm({isVisible,setIsVisible}) {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const [animationClass,setAnimationClass] = useState(isVisible ? 'fade in': 'fade-out')
+  useEffect(()=> {
+    if(isVisible){
+      setAnimationClass('fade-in');
+
+    }else{
+      setAnimationClass('fade-out');
+    }  
+  },[isVisible])
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,10 +34,7 @@ function RegistrationForm({isVisible,setIsVisible}) {
 
       <div className='backdrop' onClick={() => setIsVisible(false)}>
 
-          <div className="form-container" style={{ marginTop: '0px' }}
-
-          onClick={(e) => e.stopPropagation()}
-          >
+      <div className={`form-container ${animationClass}`} onClick={(e) => e.stopPropagation()}>
 
             <h1>Get Your Way</h1>
             <h3>Sign up for the full experience!</h3>
