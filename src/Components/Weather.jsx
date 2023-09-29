@@ -11,12 +11,13 @@ const [weather, setWeather] = useState('');
 const [locationDetails, setLocationDetails] = useState('');
 
 const getWeather = function(){
-    axios.get("http://api.weatherapi.com/v1/current.json?key=38387323c061422fae1200751232809&q=Rhodes")
+    axios.get("http://api.weatherapi.com/v1/current.json?key=38387323c061422fae1200751232809&q=Cairo")
     .then(function(response){
         console.log("RESPONSE RECEIVED");
         setWeather({condition: response.data.current.condition.text,
         tempC: response.data.current.temp_c,
-    tempF: response.data.current.temp_f});
+    tempF: response.data.current.temp_f,
+iconUrl: "http://"+ response.data.current.condition.icon});
 setLocationDetails({city: response.data.location.name, country:response.data.location.country})})
     .catch(err => console.error(err));   
 }
@@ -31,6 +32,7 @@ useEffect(function(){
         <div className="weather">
         <h2>Weather at your chosen destination...</h2>
         <h3>{locationDetails.city}, {locationDetails.country}</h3>
+        <img src={weather.iconUrl} alt="weather icon" />
         <table>
             <tr>
                 <th>Condition:  </th>
