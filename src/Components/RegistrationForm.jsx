@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../CssFiles/RegistrationFormCSS.css';
 
-function RegistrationForm() {
-  const [isVisible, setIsVisible] = useState(false);
+function RegistrationForm({isVisible,setIsVisible}) {
+  // const [isVisible, setIsVisible] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -15,11 +15,11 @@ function RegistrationForm() {
     console.log(`Email: ${email}`);
     console.log(`Password: ${password}`);
   };
-
+  if(!isVisible) return null;
+  
   return (
     <div>
-    <button onClick={() => setIsVisible(true)}>Register</button>
-    {isVisible && (
+
       <div className='backdrop' onClick={() => setIsVisible(false)}>
 
           <div className="form-container" style={{ marginTop: '0px' }}
@@ -47,7 +47,7 @@ function RegistrationForm() {
             </div>
           </div>
 
-      )}
+
     </div>
   );
 }

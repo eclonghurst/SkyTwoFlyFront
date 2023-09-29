@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({onFaviconClick}) => {
     return (
         <nav className="navbar navbar-expand-lg">
             <div id="navbar-container">
@@ -20,13 +20,11 @@ const NavBar = () => {
                         <Link className="nav-link" to="/Flights">Flights</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="signUp">Sign up</Link>
-                    </li>
-                    <li className="nav-item">
                         <Link className="nav-link" to="SignIn">Log in</Link>
                     </li>
                 </ul>
-                <FontAwesomeIcon className="accountIcon" icon={faUser} style={{color: "#ffffff"}} /> {}
+                <FontAwesomeIcon className="accountIcon" icon={faUser} style={{color: "#ffffff"}} 
+                onClick = {onFaviconClick}/> 
             </div>
         </div>
           
