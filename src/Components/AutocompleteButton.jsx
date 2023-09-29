@@ -59,12 +59,14 @@ function AutocompleteButton() {
   return (
     <>
       <div className="buttonContainer">
+        <label htmlFor="">
         <input className="autocompleteInputField"
           type="text"
           value={inputValue}
           onChange={handleInputChange}
           placeholder="Type here ..."
         />
+        </label>
         {suggestions.length > 0 && (
           <ul className="suggestion-list" ref={suggestionsListRef}>
             {suggestions.map((suggestion, index) => (

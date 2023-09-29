@@ -3,15 +3,24 @@ import AutocompleteButton from "./AutocompleteButton";
 import SearchButton from "./SearchButton";
 
 function ButtonBar() {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("form submitted");
+
+  }
+
   return (
     <>
     <div className="ButtonBarContainer">
-    <AutocompleteButton/>
-    <AutocompleteButton/>
-    <AutocompleteButton/>
-    <AutocompleteButton/>
-    <AutocompleteButton/>
-    <SearchButton/>
+      <form className="buttonBar-form" onSubmit={handleSubmit}>
+        <AutocompleteButton/>
+        <AutocompleteButton/>
+        <AutocompleteButton/>
+        <AutocompleteButton/>
+        <AutocompleteButton/>
+        <SearchButton/>
+      </form>
     </div>
     </>
   )
