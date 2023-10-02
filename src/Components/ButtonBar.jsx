@@ -1,7 +1,7 @@
 import React from "react";
 import AutocompleteButton from "./AutocompleteButton";
 import SearchButton from "./SearchButton";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate, useParams } from "react-router";
 import axios from "axios";
 import FlightInput from "./FlightInput";
@@ -18,11 +18,34 @@ function ButtonBar() {
 
   const [flightList, setFlightList] = useState([]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("form submitted");
-    axios
-      .get("http://localhost:8080/flights/getOneWay/", {
+  // holds the value - prevents it from being updated on render
+  const firstRun = useRef(true);
+
+  // everytime flight list gets updated, it will run the content inside
+  // in this case, navigating once the flight list is updated with the get request data
+  useEffect(() => {
+    // is this the first time running? if yes, don't run content inside
+    if (firstRun.current) {
+      firstRun.current = false;
+      console.log("Don't Run!");
+      return;
+    }
+    // on next time flight list is updated, do this:
+    console.log(flightList);
+    if (flightList.length > 0) {
+      nav("/flights", {
+        state: {
+          fly_to: departure,
+          fly_from: departure,
+          flightList: flightList,
+        },
+      });
+    }
+  }, [flightList]);
+
+  const getFlights = async () => {
+    try {
+      const res = await axios.get("http://localhost:8080/flights/getOneWay/", {
         params: {
           fly_to: departure,
           fly_from: arrival,
@@ -30,14 +53,20 @@ function ButtonBar() {
           date_to: dateTo,
           adults: adults,
         },
-      })
-      .then((res) => {
-        console.log(res.data);
-        setFlightList(res.data);
-      })
-      .catch((err) => console.error(err));
+      });
+      // console.log(res.data);
+      // console.log(res.data[0].cityTo);
+      const resultData = res.data;
+      setFlightList(resultData);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
-    nav("/flights", { state: { fly_to: departure, fly_from: departure } });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("form submitted");
+    getFlights();
   };
 
   return (

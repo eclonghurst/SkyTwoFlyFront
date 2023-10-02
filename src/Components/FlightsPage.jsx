@@ -14,6 +14,7 @@ function FlightsPage() {
       <div className="flight-page-container">
         <div className="flight-container">
           <p>{location.state.fly_from}</p>
+          <p>{location.state.flightList[0].cityTo}</p>
           <Flight />
           <Flight />
         </div>
