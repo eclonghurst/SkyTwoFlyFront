@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import '../CssFiles/RegistrationFormCSS.css';
+import axios from 'axios';
+import PropTypes from "prop-types";
 
-function RegistrationForm() {
+function RegistrationForm(props) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -9,11 +11,24 @@ function RegistrationForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    axios.post("http://localhost:3000/signup",{
+      firstName,lastName,email,password
+    }).then (function(res){
+      console.log("RES:", res);
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPassword("")
+      props.getUsers();
+    }).catch(err => console.log(err));
+
+
+
     console.log(`First Name: ${firstName}`);
     console.log(`Last Name: ${lastName}`);
     console.log(`Email: ${email}`);
     console.log(`Password: ${password}`);
-  };
+  }
 
   return (
     <div>
@@ -41,6 +56,10 @@ function RegistrationForm() {
       </form>
     </div>
   );
+}
+
+RegistrationForm.propTypes = {
+  getUsers: PropTypes.func.isRequired,
 }
 
 export default RegistrationForm;
