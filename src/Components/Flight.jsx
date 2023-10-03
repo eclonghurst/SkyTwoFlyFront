@@ -3,16 +3,22 @@ import "../CssFiles/FlightCSS.css";
 import airlineLogo from "../Images/airlineLogo.png";
 import aircraft from "../Images/aircraft.png";
 import { Link } from "react-router-dom";
+import airlineJSON from "../airlines.json";
 
 function Flight(props) {
+  const airlineList = airlineJSON.find(
+    (airline) => props.airline.toLowerCase() == airline.id.toLowerCase()
+  );
+
   return (
     <>
       <div className="flight-panel">
         <div className="container-airline-details">
-          <img src={airlineLogo} alt="Airline logo" className="airline-logo" />
+          <img src={airlineList.logo}></img>
+          <h3>&thinsp; {airlineList.name}</h3>
         </div>
         <div className="container-flight-details">
-          <div className="departure">MAN</div>
+          <div className="departure">{props.depart}</div>
           <div className="flight-pointer"></div>
           <div className="'flight-route">
             <img src={aircraft} alt="aircraft" className="aircraft-icon" />
@@ -20,9 +26,9 @@ function Flight(props) {
           <div className="destination">{props.destination}</div>
         </div>
         <div className="container-flight-details-price">
-          <p>££</p>
-          
-          <Link to="/BookingPage" state={{destination: props.destination}} >
+          <p>£{props.price}</p>
+
+          <Link to="/BookingPage" state={{ destination: props.destination }}>
             <button className="book-button">Book</button>
           </Link>
         </div>

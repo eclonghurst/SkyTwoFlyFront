@@ -8,21 +8,27 @@ import { useLocation } from "react-router";
 function FlightsPage() {
   const location = useLocation();
   //   console.log({ departure });
+  const flightList = location.state.flightList;
 
-  const flightDisplay = location.state.flightList.map((flight) => (
-    <Flight>{flight}</Flight>
+  const flightDisplay = flightList.map((flight, i) => (
+    <Flight
+      key={i}
+      depart={flightList[i].flyFrom}
+      destination={flightList[i].flyTo}
+      price={flightList[i].fare.adults}
+      airline={flightList[i].airlines[0]}
+    >
+      {flight}
+    </Flight>
   ));
 
   return (
     <>
       <div className="flight-page-container">
         <div className="flight-container">
-          <p>{location.state.fly_from}</p>
-          <p>{location.state.flightList[0].cityTo}</p>
+          {/* <p>{location.state.fly_from}</p>
+          <p>{location.state.flightList[0].cityTo}</p> */}
           <>{flightDisplay}</>
-          <Flight />
-          <Flight destination={location.state.flightList[0].flyTo} />
-          <Flight />
         </div>
         <Weather city={location.state.flightList[0].cityTo} />
       </div>
