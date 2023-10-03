@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
-import '../CssFiles/ButtonCSS.css'
+import "../CssFiles/ButtonCSS.css";
 
 // sample airport data
 const ukAirportData = [
-  'Heathrow Airport',
-  'Gatwick Airport',
-  'Manchester Airport',
-  'Birmingham Airport',
-  'Edinburgh Airport',
-  'Glasgow Airport',
+  "Heathrow Airport",
+  "Gatwick Airport",
+  "Manchester Airport",
+  "Birmingham Airport",
+  "Edinburgh Airport",
+  "Glasgow Airport",
 ];
 
-function AutocompleteButton() {
-  const [inputValue, setInputValue] = useState('');
+function AutocompleteButton({ props }) {
+  const [inputValue, setInputValue] = useState("");
   const [suggestions, setSuggestions] = useState([]);
-  const [selectedSuggestion, setSelectedSuggestion] = useState('');
+  const [selectedSuggestion, setSelectedSuggestion] = useState("");
 
   const inputRef = useRef(null);
   const suggestionsListRef = useRef(null);
@@ -24,7 +24,9 @@ function AutocompleteButton() {
     const value = e.target.value;
     setInputValue(value);
 
-    const filteredSuggestions = ukAirportData.filter((airport) => airport.toLowerCase().includes(value.toLowerCase()));
+    const filteredSuggestions = ukAirportData.filter((airport) =>
+      airport.toLowerCase().includes(value.toLowerCase())
+    );
     setSuggestions(filteredSuggestions);
   };
 
@@ -60,12 +62,13 @@ function AutocompleteButton() {
     <>
       <div className="buttonContainer">
         <label htmlFor="">
-        <input className="autocompleteInputField"
-          type="text"
-          value={inputValue}
-          onChange={handleInputChange}
-          placeholder="Type here ..."
-        />
+          <input
+            className="autocompleteInputField"
+            type="text"
+            value={inputValue}
+            onChange={handleInputChange}
+            placeholder="Type here ..."
+          />
         </label>
         {suggestions.length > 0 && (
           <ul className="suggestion-list" ref={suggestionsListRef}>
