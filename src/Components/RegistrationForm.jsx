@@ -11,14 +11,21 @@ function RegistrationForm(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post("http://localhost:3000/signup",{
+    console.log("Submitting form");
+    console.log(`First Name: ${firstName}`);
+    console.log(`Last Name: ${lastName}`);
+    console.log(`Email: ${email}`);
+    console.log(`Password: ${password}`);
+
+    axios.post("http://localhost:8080/users/register",{
       firstName,lastName,email,password
     }).then (function(res){
       console.log("RES:", res);
       setFirstName("");
       setLastName("");
       setEmail("");
-      setPassword("")
+      setPassword("");
+      if(typeof props.getUsers === "function")
       props.getUsers();
     }).catch(err => console.log(err));
 
