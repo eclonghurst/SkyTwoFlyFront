@@ -47,8 +47,8 @@ function ButtonBar() {
     try {
       const res = await axios.get("http://localhost:8080/flights/getOneWay/", {
         params: {
-          fly_to: departure,
-          fly_from: arrival,
+          fly_to: arrival,
+          fly_from: departure,
           date_from: dateFrom,
           date_to: dateTo,
           adults: adults,

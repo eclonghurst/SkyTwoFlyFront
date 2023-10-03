@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 
-function Weather() {
+function Weather(props) {
   const [weather, setWeather] = useState("");
 
   const [locationDetails, setLocationDetails] = useState("");
@@ -12,7 +12,8 @@ function Weather() {
   const getWeather = function () {
     axios
       .get(
-        "http://api.weatherapi.com/v1/current.json?key=38387323c061422fae1200751232809&q=Pefkos"
+        "http://api.weatherapi.com/v1/current.json?key=38387323c061422fae1200751232809&q=" +
+          props.city
       )
       .then(function (response) {
         console.log("RESPONSE RECEIVED");

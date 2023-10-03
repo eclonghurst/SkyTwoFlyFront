@@ -18,7 +18,7 @@ function FlightsPage() {
           <Flight />
           <Flight />
         </div>
-        <Weather />
+        <Weather city={location.state.flightList[0].cityTo} />
       </div>
     </>
   );
