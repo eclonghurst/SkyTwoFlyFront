@@ -17,6 +17,7 @@ import RegistrationForm from './Components/RegistrationForm';
 import { BrowserRouter as Router, Routes, Route }
     from 'react-router-dom';
 import BookingPage from './Components/BookingPage';
+import Login from './Components/Login';
 
 function App() {
   const[isVisible,setIsVisible] = useState(false)
@@ -34,7 +35,7 @@ function App() {
     
     <Footer/>
 
-  <RegistrationForm isVisible={isVisible} setIsVisible={setIsVisible}/>  
+  <Login isVisible={isVisible} setIsVisible={setIsVisible}/>  
     </Router>
   );
 }

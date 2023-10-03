@@ -1,8 +1,8 @@
 import React from "react";
 import '../CssFiles/NavBarCSS.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+
 import { Link } from "react-router-dom";
+import Login from "./Login";
 
 const NavBar = ({onFaviconClick}) => {
     return (
@@ -23,8 +23,8 @@ const NavBar = ({onFaviconClick}) => {
                         <Link className="nav-link" to="SignIn">Log in</Link>
                     </li>
                 </ul>
-                <FontAwesomeIcon className="accountIcon" icon={faUser} style={{color: "#ffffff"}} 
-                onClick = {onFaviconClick}/> 
+                <Login/>
+           
             </div>
         </div>
           
