@@ -25,7 +25,6 @@ function RegistrationForm(props) {
       setLastName("");
       setEmail("");
       setPassword("");
-      if(typeof props.getUsers === "function")
       props.getUsers();
     }).catch(err => console.log(err));
 
