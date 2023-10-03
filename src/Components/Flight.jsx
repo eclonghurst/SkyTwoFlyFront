@@ -4,7 +4,7 @@ import airlineLogo from "../Images/airlineLogo.png";
 import aircraft from "../Images/aircraft.png";
 import { Link } from "react-router-dom";
 
-function Flight() {
+function Flight(props) {
   return (
     <>
       <div className="flight-panel">
@@ -17,12 +17,12 @@ function Flight() {
           <div className="'flight-route">
             <img src={aircraft} alt="aircraft" className="aircraft-icon" />
           </div>
-          <div className="destination">DUS</div>
+          <div className="destination">{props.destination}</div>
         </div>
         <div className="container-flight-details-price">
           <p>££</p>
           
-          <Link to="/BookingPage">
+          <Link to="/BookingPage" state={{destination: props.destination}} >
             <button className="book-button">Book</button>
           </Link>
         </div>
