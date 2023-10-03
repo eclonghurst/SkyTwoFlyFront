@@ -3,7 +3,7 @@ import "../CssFiles/TagLineCSS.css";
 
 const TagLine = () => {
     return(
-        <h3 className="Tagline">Find Your Flight, Your Way.</h3>
+        <h3 className="Tagline">Sky's the Limit- Fly, your way!</h3>
     )
 
 }
