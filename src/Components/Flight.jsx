@@ -14,8 +14,12 @@ function Flight(props) {
     <>
       <div className="flight-panel">
         <div className="container-airline-details">
-          <img src={airlineList.logo}></img>
+          <img className="airline-logo" src={airlineList.logo}></img>
           <h3>&thinsp; {airlineList.name}</h3>
+          <h5 className="duration">
+            &thinsp; {Math.trunc(props.duration / 60 / 60)} hours{" "}
+            {(props.duration / 60) % 60} mins
+          </h5>
         </div>
         <div className="container-flight-details">
           <div className="departure">{props.depart}</div>

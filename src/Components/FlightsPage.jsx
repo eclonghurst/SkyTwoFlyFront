@@ -17,6 +17,7 @@ function FlightsPage() {
       destination={flightList[i].flyTo}
       price={flightList[i].fare.adults}
       airline={flightList[i].airlines[0]}
+      duration={flightList[i].duration}
     >
       {flight}
     </Flight>
