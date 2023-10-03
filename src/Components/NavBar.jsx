@@ -3,6 +3,7 @@ import "../CssFiles/NavBarCSS.css";
 
 import { Link } from "react-router-dom";
 import Login from "./Login";
+import SkyImage from "../Images/SkyLogo.png";
 
 const NavBar = ({ onFaviconClick }) => {
   return (
@@ -10,6 +11,7 @@ const NavBar = ({ onFaviconClick }) => {
       <div id="navbar-container">
         <Link className="navbar-brand" id="nav-brand" to="/">
           GetYourWay |
+          <img src = {SkyImage} className= "navbar-logo" alt = "sky logo"/>
         </Link>
         <button
           className="navbar-toggler"

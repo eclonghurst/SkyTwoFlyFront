@@ -54,3 +54,9 @@ ul.navbar-nav{
     padding-left: 500px;
 }
 }
+
+.navbar-logo{
+    height: 50px;
+    width: 85px;
+    padding-left: 15px;
+}
