@@ -13,15 +13,18 @@ function Flight() {
         </div>
         <div className="container-flight-details">
           <div className="departure">MAN</div>
-
+          <div className="flight-pointer"></div>
           <div className="'flight-route">
-            <img src={aircraft} alt="aircraft" className="aircraft-icon"/>
+            <img src={aircraft} alt="aircraft" className="aircraft-icon" />
           </div>
           <div className="destination">DUS</div>
         </div>
         <div className="container-flight-details-price">
           <p>££</p>
-          <Link to="/BookingPage" ><button className="book-button">Book</button></Link>
+          <button className="book-button">Book</button>
+          <Link to="/BookingPage">
+            <button className="book-button">Book</button>
+          </Link>
         </div>
       </div>
     </>
