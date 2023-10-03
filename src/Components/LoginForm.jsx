@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../CssFiles/RegistrationFormCSS.css';
+import SkyImage from "../Images/SkyLogo.png";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -13,7 +14,7 @@ function LoginForm() {
 
   return (
     <div>
-      <h1>Login</h1>
+      <h1>Login<img src = {SkyImage} className= "navbar-logo" alt = "sky logo"/></h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="email" className="form-label">Email</label>
