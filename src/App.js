@@ -18,12 +18,14 @@ import { BrowserRouter as Router, Routes, Route }
     from 'react-router-dom';
 import BookingPage from './Components/BookingPage';
 import Login from './Components/Login';
+import TagLine from './Components/TagLine';
 
 function App() {
   const[isVisible,setIsVisible] = useState(false)
   return (
     <Router>
     <NavBar onFaviconClick={()=> setIsVisible(true)}/>
+    <TagLine/>
    
     <Routes>
         <Route path="/" element={<Home />} />
