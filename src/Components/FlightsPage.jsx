@@ -21,6 +21,7 @@ function FlightsPage() {
           <p>{location.state.flightList[0].cityTo}</p>
           <>{flightDisplay}</>
           <Flight />
+          <Flight destination={location.state.flightList[0].flyTo} />
           <Flight />
         </div>
         <Weather city={location.state.flightList[0].cityTo} />

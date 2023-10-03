@@ -1,7 +1,10 @@
 import React from "react";
 import Flight from "./Flight";
+import { useLocation } from "react-router-dom";
 
 function BookingPage(){
+
+    const location = useLocation();
 
     return(
         <>
@@ -16,7 +19,7 @@ function BookingPage(){
             <p>
 
             </p>
-            <p>This is a container for the map</p>
+            <p>This is a container for the map. Map details for {location.state.destination} </p>
         </div>
         </>
     )
