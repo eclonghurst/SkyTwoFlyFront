@@ -22,6 +22,13 @@ function Weather(props) {
           tempC: response.data.current.temp_c,
           tempF: response.data.current.temp_f,
           iconUrl: "http://" + response.data.current.condition.icon,
+          wind: response.data.current.wind_kph,
+          windDirection: response.data.current.wind_dir,
+          humidity: response.data.current.humidity,
+          feelsLikeC: response.data.current.feelslike_c,
+          feelsLikeF: response.data.current.feelslike_f,
+          uv: response.data.current.uv,
+          precipInches: response.data.current.precip_in,
         });
         setLocationDetails({
           city: response.data.location.name,
@@ -48,21 +55,19 @@ function Weather(props) {
             alt="weather icon"
           />
         </div>
-        <table>
-          <tr>
-            <th>Condition: </th>
-            <td> {weather.condition} </td>
-          </tr>
-          <tr>
-            <th>Temperature C: </th>
-            <td> {weather.tempC} </td>
-          </tr>
-          <tr>
-            <th>Temperature F: </th>
-            <td> {weather.tempF} </td>
-          </tr>
-        </table>
-        <p> </p>
+
+        <div className="weather-container">
+          <div className="weather-info-container">
+            <h4 className="weather-info">Condition:&emsp;</h4>
+            <h5 className="weather-info">{weather.condition} </h5>
+          </div>
+          <div className="weather-info-container">
+            <h4 className="weather-info">Temperature:&emsp;</h4>
+            <h5 className="weather-info">
+              {weather.tempC}°C / {weather.tempF}°F
+            </h5>
+          </div>
+        </div>
       </div>
     </>
   );
