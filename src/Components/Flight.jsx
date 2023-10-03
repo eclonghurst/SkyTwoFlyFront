@@ -21,7 +21,7 @@ function Flight() {
         </div>
         <div className="container-flight-details-price">
           <p>££</p>
-          <button className="book-button">Book</button>
+          
           <Link to="/BookingPage">
             <button className="book-button">Book</button>
           </Link>
