@@ -1,7 +1,12 @@
 .flight-container {
   display: flex;
-  margin-left: 100px;
   flex-grow: 2;
+  margin-top: 10px;
+}
+
+.travel-header {
+  margin-left: 180px;
+  margin-top: 50px;
 }
 
 .flight-panel {

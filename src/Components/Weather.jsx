@@ -45,6 +45,7 @@ function Weather(props) {
   return (
     <>
       <div className="weather">
+        <h2 className="weather-header">Your destination's weather: </h2>
         <div className="location-and-icon">
           <h2 className="city-country-hearder">
             {locationDetails.city}, {locationDetails.country}
@@ -66,6 +67,24 @@ function Weather(props) {
             <h5 className="weather-info">
               {weather.tempC}°C / {weather.tempF}°F
             </h5>
+          </div>
+          <div className="weather-info-container">
+            <h4 className="weather-info">Wind:&emsp;</h4>
+            <h5 className="weather-info">
+              {weather.wind} {weather.windDirection}
+            </h5>
+          </div>
+          <div className="weather-info-container">
+            <h4 className="weather-info">Rain:&emsp;</h4>
+            <h5 className="weather-info">{weather.precipInches} inches</h5>
+          </div>
+          <div className="weather-info-container">
+            <h4 className="weather-info">Humidity:&emsp;</h4>
+            <h5 className="weather-info">{weather.humidity}%</h5>
+          </div>
+          <div className="weather-info-container">
+            <h4 className="weather-info">UV index:&emsp;</h4>
+            <h5 className="weather-info">{weather.uv}</h5>
           </div>
         </div>
       </div>

@@ -29,6 +29,10 @@ function FlightsPage() {
         <div className="flight-container">
           {/* <p>{location.state.fly_from}</p>
           <p>{location.state.flightList[0].cityTo}</p> */}
+          <h2 className="travel-header">
+            Your results from {flightList[0].cityFrom} to {flightList[0].cityTo}
+            :
+          </h2>
           <>{flightDisplay}</>
         </div>
         <Weather city={location.state.flightList[0].cityTo} />
