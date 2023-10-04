@@ -4,7 +4,6 @@ import SearchButton from "./SearchButton";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate, useParams } from "react-router";
 import axios from "axios";
-import FlightInput from "./FlightInput";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import airportData from "../airports.json";
@@ -80,12 +79,20 @@ function ButtonBar() {
       <div className="ButtonBarContainer">
         <h3 className="tagline">Sky's the Limit- Fly, your way!</h3>
         <form className="buttonBar-form" onSubmit={handleSubmit}>
-          <AutocompleteButton val={departure} setVal={setDeparture} />
-          <AutocompleteButton val={arrival} setVal={setArrival} />
+          <AutocompleteButton
+            val={departure}
+            setVal={setDeparture}
+            displayText={"Fly from..."}
+          />
+          <AutocompleteButton
+            val={arrival}
+            setVal={setArrival}
+            displayText={"Fly to..."}
+          />
           <div className="buttonContainer">
             <DatePicker
               className="autocompleteInputField"
-              placeholderText="Select a date..."
+              placeholderText="Search from..."
               dateFormat={"dd/MM/yyyy"}
               value={dateFrom}
               selected={dateFrom}
@@ -96,7 +103,7 @@ function ButtonBar() {
           <div className="buttonContainer">
             <DatePicker
               className="autocompleteInputField"
-              placeholderText="Select a date..."
+              placeholderText="Search to..."
               dateFormat={"dd/MM/yyyy"}
               value={dateTo}
               selected={dateTo}
@@ -104,13 +111,18 @@ function ButtonBar() {
               onChange={(dateTo) => setDateTo(dateTo)}
             />
           </div>
-          <FlightInput
-            value={adults}
-            onChange={(e) => {
-              console.log(e.target.value);
-              setAdults(e.target.value);
-            }}
-          />
+          <div className="buttonContainer">
+            <label htmlFor="">
+              <input
+                className="autocompleteInputField"
+                type="number"
+                min={1}
+                value={adults}
+                onChange={(e) => setAdults(e.target.value)}
+                placeholder="No. of tickets..."
+              />
+            </label>
+          </div>
           {/* <SearchButton onClick={handleSubmit}/> */}
           <button
             type="submit"

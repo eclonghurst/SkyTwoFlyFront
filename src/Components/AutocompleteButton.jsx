@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "../CssFiles/ButtonCSS.css";
 import airportData from "../airports.json";
 
-function AutocompleteButton({ val, setVal }) {
+function AutocompleteButton({ val, setVal, displayText }) {
   const ukAirportData = airportData.map((airport) => airport.name);
   // const [inputValue, setInputValue] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -59,7 +59,7 @@ function AutocompleteButton({ val, setVal }) {
             type="text"
             value={val}
             onChange={handleInputChange}
-            placeholder="Type here ..."
+            placeholder={displayText}
           />
         </label>
         {suggestions.length > 0 && (
