@@ -3,7 +3,7 @@
 /* outer container */
 .ButtonBarContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -16,6 +16,22 @@
     rgba(121, 9, 110, 1) 50%,
     rgba(136, 42, 177, 1) 100%
   );
+}
+
+.tagline {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-right: 1050px;
+  color: white;
+  border: none;
+  line-height: none;
+  margin: 0;
+  padding-left: 240px;
+  padding-bottom: 40px;
+  text-align: center;
+  font-family: "PT Serif", serif;
+  font-weight: bold;
 }
 
 .buttonBar-form {

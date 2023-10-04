@@ -11,7 +11,7 @@ const NavBar = ({ onFaviconClick }) => {
       <div id="navbar-container">
         <Link className="navbar-brand" id="nav-brand" to="/">
           GetYourWay |
-          <img src = {SkyImage} className= "navbar-logo" alt = "sky logo"/>
+          <img src={SkyImage} className="navbar-logo" alt="sky logo" />
         </Link>
         <button
           className="navbar-toggler"
