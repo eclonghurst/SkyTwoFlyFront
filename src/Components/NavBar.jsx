@@ -11,7 +11,7 @@ const NavBar = ({ onFaviconClick }) => {
       <div id="navbar-container">
         <Link className="navbar-brand" id="nav-brand" to="/">
           GetYourWay |
-          <img src = {SkyImage} className= "navbar-logo" alt = "sky logo"/>
+          <img src={SkyImage} className="navbar-logo" alt="sky logo" />
         </Link>
         <button
           className="navbar-toggler"
@@ -26,11 +26,11 @@ const NavBar = ({ onFaviconClick }) => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item active">
+            {/* <li className="nav-item active">
               <Link className="nav-link" to="/Flights">
                 Flights
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link className="nav-link" to="SignIn">
                 Log in

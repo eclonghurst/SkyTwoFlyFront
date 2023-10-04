@@ -1,62 +1,67 @@
 nav.navbar {
-    display: flex;
-    background: linear-gradient(90deg, rgba(29,0,65,1) 0%, rgba(121,9,110,1) 50%, rgba(136,42,177,1) 100%);
-    padding-top: 25px;
-    justify-content: center;
+  display: flex;
+  background: linear-gradient(
+    90deg,
+    rgba(29, 0, 65, 1) 0%,
+    rgba(121, 9, 110, 1) 50%,
+    rgba(136, 42, 177, 1) 100%
+  );
+  padding-top: 25px;
+  justify-content: center;
 }
 
-a.navbar-brand{
-    font-family: 'Merriweather', serif;
-    color:#ffffff;
-    font-size: 50px;
-    font-weight: bold;
-    padding-left: 40px;
+a.navbar-brand {
+  font-family: "Merriweather", serif;
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: bold;
+  padding-left: 40px;
 }
 
 #navbar-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-a.navbar-brand:hover{
-    color: rgb(255, 229, 177);
+a.navbar-brand:hover {
+  color: rgb(255, 229, 177);
 }
 
-a.navbar-brand:active{
-    color: white;
+a.navbar-brand:active {
+  color: white;
 }
 
-a.nav-link{
-    color: white;
+a.nav-link {
+  color: white;
 }
 
 .brand-logo {
-    height: 30px;
-    width: auto; 
-    margin-right: 10px; 
+  height: 30px;
+  width: auto;
+  margin-right: 10px;
 }
 
-ul.navbar-nav{
-    padding-right: 15px;
-    padding-left: 15px;
-    :hover {
-        color: rgb(255, 226, 167);
-    }
+ul.navbar-nav {
+  padding-right: 15px;
+  padding-left: 15px;
+  :hover {
+    color: rgb(255, 226, 167);
+  }
 }
 
 .accountIcon {
-    margin-right: 100px;
+  margin-right: 100px;
 }
 
-@media (min-width: 992px){
-.navbar-expand-lg .navbar-collapse {
-    justify-content:center;
-    padding-left: 500px;
-}
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: center;
+    padding-left: 800px;
+  }
 }
 
-.navbar-logo{
-    height: 60px;
-    width: 100px;
-    padding-left: 15px;
+.navbar-logo {
+  height: 60px;
+  width: 100px;
+  padding-left: 15px;
 }
