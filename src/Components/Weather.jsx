@@ -22,6 +22,13 @@ function Weather(props) {
           tempC: response.data.current.temp_c,
           tempF: response.data.current.temp_f,
           iconUrl: "http://" + response.data.current.condition.icon,
+          wind: response.data.current.wind_kph,
+          windDirection: response.data.current.wind_dir,
+          humidity: response.data.current.humidity,
+          feelsLikeC: response.data.current.feelslike_c,
+          feelsLikeF: response.data.current.feelslike_f,
+          uv: response.data.current.uv,
+          precipInches: response.data.current.precip_in,
         });
         setLocationDetails({
           city: response.data.location.name,
@@ -38,6 +45,7 @@ function Weather(props) {
   return (
     <>
       <div className="weather">
+        <h2 className="weather-header">Your destination's weather: </h2>
         <div className="location-and-icon">
           <h2 className="city-country-hearder">
             {locationDetails.city}, {locationDetails.country}
@@ -48,26 +56,40 @@ function Weather(props) {
             alt="weather icon"
           />
         </div>
-        <table>
-          <tr>
-            <th>Condition: </th>
-            <td> {weather.condition} </td>
-          </tr>
-          <tr>
-            <th>Temperature C: </th>
-            <td> {weather.tempC} </td>
-          </tr>
-          <tr>
-            <th>Temperature F: </th>
-            <td> {weather.tempF} </td>
-          </tr>
-        </table>
-        <p> </p>
-        <p>Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com </a></p>
-        <p><a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt="Weather data by WeatherAPI.com" border="0"/></a></p>
+
+        <div className="weather-container">
+          <div className="weather-info-container">
+            <h4 className="weather-info">Condition:&emsp;</h4>
+            <h5 className="weather-info">{weather.condition} </h5>
+          </div>
+          <div className="weather-info-container">
+            <h4 className="weather-info">Temperature:&emsp;</h4>
+            <h5 className="weather-info">
+              {weather.tempC}°C / {weather.tempF}°F
+            </h5>
+          </div>
+          <div className="weather-info-container">
+            <h4 className="weather-info">Wind:&emsp;</h4>
+            <h5 className="weather-info">
+              {weather.wind} {weather.windDirection}
+            </h5>
+          </div>
+          <div className="weather-info-container">
+            <h4 className="weather-info">Rain:&emsp;</h4>
+            <h5 className="weather-info">{weather.precipInches} inches</h5>
+          </div>
+          <div className="weather-info-container">
+            <h4 className="weather-info">Humidity:&emsp;</h4>
+            <h5 className="weather-info">{weather.humidity}%</h5>
+          </div>
+          <div className="weather-info-container">
+            <h4 className="weather-info">UV index:&emsp;</h4>
+            <h5 className="weather-info">{weather.uv}</h5>
+          </div>
         </div>
-        </>
-    )
+      </div>
+    </>
+  );
 }
 
 export default Weather;

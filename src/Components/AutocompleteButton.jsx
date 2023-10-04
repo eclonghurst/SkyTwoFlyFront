@@ -1,18 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../CssFiles/ButtonCSS.css";
+import airportData from "../airports.json";
 
-// sample airport data
-const ukAirportData = [
-  "Heathrow Airport",
-  "Gatwick Airport",
-  "Manchester Airport",
-  "Birmingham Airport",
-  "Edinburgh Airport",
-  "Glasgow Airport",
-];
-
-function AutocompleteButton({ props }) {
-  const [inputValue, setInputValue] = useState("");
+function AutocompleteButton({ val, setVal }) {
+  const ukAirportData = airportData.map((airport) => airport.name);
+  // const [inputValue, setInputValue] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [selectedSuggestion, setSelectedSuggestion] = useState("");
 
@@ -22,7 +14,7 @@ function AutocompleteButton({ props }) {
   // Handling the input change
   const handleInputChange = (e) => {
     const value = e.target.value;
-    setInputValue(value);
+    setVal(value);
 
     const filteredSuggestions = ukAirportData.filter((airport) =>
       airport.toLowerCase().includes(value.toLowerCase())
@@ -32,7 +24,7 @@ function AutocompleteButton({ props }) {
 
   const handleSuggestionClick = (suggestion) => {
     setSelectedSuggestion(suggestion);
-    setInputValue(suggestion);
+    setVal(suggestion);
     setSuggestions([]);
   };
 
@@ -65,7 +57,7 @@ function AutocompleteButton({ props }) {
           <input
             className="autocompleteInputField"
             type="text"
-            value={inputValue}
+            value={val}
             onChange={handleInputChange}
             placeholder="Type here ..."
           />

@@ -3,13 +3,15 @@ import Flight from "./Flight";
 import Map from "./Map";
 import { useLocation } from "react-router-dom";
 
-function BookingPage(){
+function BookingPage() {
+  const location = useLocation();
 
-    const location = useLocation();
+  console.log(location.state);
+
 
     return(
         <>
-        <Flight/>
+     <Flight {...location.state} />
         <label for="confirm">Book GetYourWay flights today...     </label>
         <button id="confirm">Confirm</button>
         <div className="container-for-map">
@@ -25,6 +27,8 @@ function BookingPage(){
         <Map/>
         </>
     )
+
+
 }
 
 export default BookingPage;

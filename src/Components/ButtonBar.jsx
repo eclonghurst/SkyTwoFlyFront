@@ -5,6 +5,9 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate, useParams } from "react-router";
 import axios from "axios";
 import FlightInput from "./FlightInput";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import airportData from "../airports.json";
 
 function ButtonBar() {
   const nav = useNavigate();
@@ -44,13 +47,16 @@ function ButtonBar() {
   }, [flightList]);
 
   const getFlights = async () => {
+    const ukAirportData = airportData.map((airport) => airport.name);
+    const indexDep = ukAirportData.indexOf(departure);
+    const indexArr = ukAirportData.indexOf(arrival);
     try {
       const res = await axios.get("http://localhost:8080/flights/getOneWay/", {
         params: {
-          fly_to: arrival,
-          fly_from: departure,
-          date_from: dateFrom,
-          date_to: dateTo,
+          fly_to: airportData[indexArr].iata_code,
+          fly_from: airportData[indexDep].iata_code,
+          date_from: dateFrom.toLocaleDateString("en-GB"),
+          date_to: dateTo.toLocaleDateString("en-GB"),
           adults: adults,
         },
       });
@@ -72,35 +78,33 @@ function ButtonBar() {
   return (
     <>
       <div className="ButtonBarContainer">
+        <h3 className="tagline">Sky's the Limit- Fly, your way!</h3>
         <form className="buttonBar-form" onSubmit={handleSubmit}>
-          <FlightInput
-            value={departure}
-            onChange={(e) => {
-              console.log(e.target.value);
-              setDeparture(e.target.value);
-            }}
-          />
-          <FlightInput
-            value={arrival}
-            onChange={(e) => {
-              console.log(e.target.value);
-              setArrival(e.target.value);
-            }}
-          />
-          <FlightInput
-            value={dateFrom}
-            onChange={(e) => {
-              console.log(e.target.value);
-              setDateFrom(e.target.value);
-            }}
-          />
-          <FlightInput
-            value={dateTo}
-            onChange={(e) => {
-              console.log(e.target.value);
-              setDateTo(e.target.value);
-            }}
-          />
+          <AutocompleteButton val={departure} setVal={setDeparture} />
+          <AutocompleteButton val={arrival} setVal={setArrival} />
+          <div className="buttonContainer">
+            <DatePicker
+              className="autocompleteInputField"
+              placeholderText="Select a date..."
+              dateFormat={"dd/MM/yyyy"}
+              value={dateFrom}
+              selected={dateFrom}
+              minDate={new Date()}
+              onChange={(dateFrom) => setDateFrom(dateFrom)}
+            />
+          </div>
+          <div className="buttonContainer">
+            <DatePicker
+              className="autocompleteInputField"
+              placeholderText="Select a date..."
+              dateFormat={"dd/MM/yyyy"}
+              value={dateTo}
+              selected={dateTo}
+              minDate={dateFrom}
+              onChange={(dateTo) => setDateTo(dateTo)}
+            />
+          </div>
+
           <FlightInput
             value={adults}
             onChange={(e) => {
@@ -109,7 +113,6 @@ function ButtonBar() {
             }}
           />
           {/* <SearchButton onClick={handleSubmit}/> */}
-
           <button
             type="submit"
             //onClick={() => nav("/flights", { state: { fly_from: departure } })}

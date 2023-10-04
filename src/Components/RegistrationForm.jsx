@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../CssFiles/RegistrationFormCSS.css';
 import axios from 'axios';
 import PropTypes from "prop-types";
+import SkyImage from "../Images/SkyLogo.png";
 
 function RegistrationForm(props) {
   const [firstName, setFirstName] = useState("");
@@ -26,7 +27,13 @@ function RegistrationForm(props) {
       setEmail("");
       setPassword("");
       props.getUsers();
-    }).catch(err => console.log(err));
+      console.log("Test")
+      alert("You have successfully registered!")
+    }).catch(err => {
+      console.log(err)
+
+    
+  });
 
 
 
@@ -38,7 +45,8 @@ function RegistrationForm(props) {
 
   return (
     <div>
-      <h1>Get Your Way</h1>
+      <h1 className='FormTitle'>GetYourWay | <img src = {SkyImage} className= "navbar-logo" alt = "sky logo"/></h1>
+      
       <h3>Sign up for the full experience!</h3>
       <p>Plan your trips, monitor prices, and view your bookings</p>
       <form onSubmit={handleSubmit}>
