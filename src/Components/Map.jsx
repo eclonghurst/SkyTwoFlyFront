@@ -7,7 +7,7 @@ import mapboxgl from 'mapbox-gl';
 mapboxgl.accessToken = 'pk.eyJ1IjoiYnItd2F0c29uIiwiYSI6ImNsbWYzbDE2cjI2YWIzZm14NjBzZGNtcmsifQ.ZYUdF_rHxMF7qdA93FndYA';
 
 
-function Map(){
+function Map(props){
 
   const mapContainer = useRef(null);
 const map = useRef(null);
@@ -27,7 +27,7 @@ useEffect(() => {
 
     return(
     <div className="map">
-        <h3>Is a map displaying?</h3>
+        <h3>Is a map for {props.destination} displaying?</h3>
         <div ref={mapContainer} className="map"/>
 
     </div>);

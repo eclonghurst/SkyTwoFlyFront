@@ -24,7 +24,7 @@ function BookingPage() {
             </p>
             <p>This is a container for the map. Map details for {location.state.destination} </p>
         </div>
-        <Map/>
+        <Map destination={location.state.destination}/>
         </>
     )
 
