@@ -4,7 +4,7 @@ import SkyImage from "../Images/SkyLogo.png";
 
 import axios from 'axios';
 import {  useNavigate } from "react-router-dom";
-function LoginForm() {
+function LoginForm({setIsVisible}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -24,7 +24,8 @@ function LoginForm() {
     try {
       const response = await axios.post("http://localhost:8080/login",loginForm,{ withCredentials: true }
   );
-  if (response.status === 200){
+  if (response.status === 204){
+    setIsVisible(false);
 
       navigate("/Profile")
   
