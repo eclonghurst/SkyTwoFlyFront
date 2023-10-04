@@ -27,6 +27,13 @@ nav.navbar {
   justify-content: center;
 }
 
+#nav-brand {
+  color: white;
+  :active {
+    color: white;
+  }
+}
+
 a.navbar-brand {
   font-family: "SkyBold";
   font-style: bold;
@@ -42,7 +49,7 @@ a.navbar-brand {
 }
 
 a.navbar-brand:hover {
-  color: rgb(255, 229, 177);
+  color: rgb(242, 219, 255);
 }
 
 a.navbar-brand:active {
