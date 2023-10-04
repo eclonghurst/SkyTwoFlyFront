@@ -19,19 +19,15 @@
 }
 
 .tagline {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding-right: 1050px;
   color: white;
   border: none;
   line-height: none;
   margin: 0;
-  padding-left: 240px;
   padding-bottom: 40px;
   text-align: center;
   font-family: "PT Serif", serif;
   font-weight: bold;
+  margin-left: -800px;
 }
 
 .buttonBar-form {
