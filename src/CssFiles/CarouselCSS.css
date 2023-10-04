@@ -1,0 +1,10 @@
+.carousel-outer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-container {
+  width: 750px;
+  border-radius: 10px;
+}

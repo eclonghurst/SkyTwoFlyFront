@@ -4,24 +4,24 @@ import "../CssFiles/CarouselCSS.css";
 
 const images = [
   {
-    original: "/kashmir.jpg",
-    description: "Pakistan",
+    original: "/aquarium.jpg",
+    description: "Aquarium visits",
   },
   {
-    original: "/japan.jpg",
-    description: "Japan",
+    original: "/beach.jpg",
+    description: "Beach days",
   },
   {
-    original: "/italy.jpg",
-    description: "Italy",
+    original: "/hiking.jpg",
+    description: "hiking trails",
   },
   {
-    original: "/china.jpg",
-    description: "China",
+    original: "/fishing.jpg",
+    description: "Fishing trips",
   },
   {
-    original: "/austria.jpg",
-    description: "Austria",
+    original: "/museum.jpg",
+    description: "Museum days",
   },
 ];
 
@@ -29,10 +29,9 @@ const Carousel = () => {
   return (
     <div className="carousel-outer-container">
       <div className="carousel-container">
-        <ImageGallery className="carousel" items={images} showBullets={true} />
+        <ImageGallery items={images} showBullets={true} />
       </div>
     </div>
   );
 };
-
 export default Carousel;
