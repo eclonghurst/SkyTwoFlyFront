@@ -3,29 +3,29 @@ import "react-image-gallery/styles/css/image-gallery.css";
 
 const images = [
   {
-    original: "/kashmir.jpg",
-    description: "Pakistan",
+    original: "/aquarium.jpg",
+    description: "Aquarium visits",
     originalHeight: "600px",
     originalWidth: "1000px",
   },
   {
-    original: "/japan.jpg",
-    description: "Japan",
+    original: "/beach.jpg",
+    description: "Beach days",
     originalHeight: "600px",
   },
   {
-    original: "/italy.jpg",
-    description: "Italy",
+    original: "/hiking.jpg",
+    description: "hiking trails",
     originalHeight: "600px",
   },
   {
-    original: "/china.jpg",
-    description: "China",
+    original: "/fishing.jpg",
+    description: "Fishing trips",
     originalHeight: "600px",
   },
   {
-    original: "/austria.jpg",
-    description: "Austria",
+    original: "/museum.jpg",
+    description: "Museum days",
     originalHeight: "600px",
   },
 ];
