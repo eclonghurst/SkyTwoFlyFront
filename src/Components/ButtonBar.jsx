@@ -64,6 +64,7 @@ function ButtonBar() {
       const resultData = res.data;
       setFlightList(resultData);
     } catch (err) {
+      alert("No flights found for this route!");
       console.error(err);
     }
   };
@@ -98,31 +99,40 @@ function ButtonBar() {
               selected={dateFrom}
               minDate={new Date()}
               onChange={(dateFrom) => setDateFrom(dateFrom)}
+              required
             />
           </div>
           <div className="buttonContainer">
             <DatePicker
               className="autocompleteInputField"
-              placeholderText="Search to..."
               dateFormat={"dd/MM/yyyy"}
+              placeholderText="Search to..."
               value={dateTo}
               selected={dateTo}
               minDate={dateFrom}
               onChange={(dateTo) => setDateTo(dateTo)}
+              required
+              id="dateTo"
             />
           </div>
+
           <div className="buttonContainer">
             <label htmlFor="">
               <input
-                className="autocompleteInputField"
+                className="autocompleteInputField buttonContainer__input"
                 type="number"
                 min={1}
                 value={adults}
                 onChange={(e) => setAdults(e.target.value)}
-                placeholder="No. of tickets..."
+                id="adults"
+                required
               />
+              <label className="buttonContainer__label" htmlFor="adults">
+                No. of Tickets...
+              </label>
             </label>
           </div>
+
           {/* <SearchButton onClick={handleSubmit}/> */}
           <button
             type="submit"

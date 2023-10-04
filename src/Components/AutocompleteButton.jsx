@@ -55,12 +55,16 @@ function AutocompleteButton({ val, setVal, displayText }) {
       <div className="buttonContainer">
         <label htmlFor="">
           <input
-            className="autocompleteInputField"
+            className="autocompleteInputField buttonContainer__input"
             type="text"
+            id={displayText}
             value={val}
             onChange={handleInputChange}
-            placeholder={displayText}
+            required
           />
+          <label className="buttonContainer__label" htmlFor={displayText}>
+            {displayText}
+          </label>
         </label>
         {suggestions.length > 0 && (
           <ul className="suggestion-list" ref={suggestionsListRef}>
