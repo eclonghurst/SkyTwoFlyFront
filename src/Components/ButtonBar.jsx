@@ -5,6 +5,8 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate, useParams } from "react-router";
 import axios from "axios";
 import FlightInput from "./FlightInput";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 function ButtonBar() {
   const nav = useNavigate();
@@ -49,8 +51,8 @@ function ButtonBar() {
         params: {
           fly_to: arrival,
           fly_from: departure,
-          date_from: dateFrom,
-          date_to: dateTo,
+          date_from: dateFrom.toLocaleDateString("en-GB"),
+          date_to: dateTo.toLocaleDateString("en-GB"),
           adults: adults,
         },
       });
@@ -87,20 +89,29 @@ function ButtonBar() {
               setArrival(e.target.value);
             }}
           />
-          <FlightInput
-            value={dateFrom}
-            onChange={(e) => {
-              console.log(e.target.value);
-              setDateFrom(e.target.value);
-            }}
-          />
-          <FlightInput
-            value={dateTo}
-            onChange={(e) => {
-              console.log(e.target.value);
-              setDateTo(e.target.value);
-            }}
-          />
+          <div className="buttonContainer">
+            <DatePicker
+              className="autocompleteInputField"
+              placeholderText="Select a date..."
+              dateFormat={"dd/MM/yyyy"}
+              value={dateFrom}
+              selected={dateFrom}
+              minDate={new Date()}
+              onChange={(dateFrom) => setDateFrom(dateFrom)}
+            />
+          </div>
+          <div className="buttonContainer">
+            <DatePicker
+              className="autocompleteInputField"
+              placeholderText="Select a date..."
+              dateFormat={"dd/MM/yyyy"}
+              value={dateTo}
+              selected={dateTo}
+              minDate={dateFrom}
+              onChange={(dateTo) => setDateTo(dateTo)}
+            />
+          </div>
+
           <FlightInput
             value={adults}
             onChange={(e) => {
@@ -109,7 +120,6 @@ function ButtonBar() {
             }}
           />
           {/* <SearchButton onClick={handleSubmit}/> */}
-
           <button
             type="submit"
             //onClick={() => nav("/flights", { state: { fly_from: departure } })}
