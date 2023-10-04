@@ -54,3 +54,7 @@
     transition: opacity 0.3s ease-in-out;
   }
    */
+
+.accountIcon:hover {
+  cursor: pointer;
+}
