@@ -4,11 +4,11 @@ import SkyImage from "../Images/SkyLogo.png";
 
 import axios from 'axios';
 import {  useNavigate } from "react-router-dom";
-
-function LoginForm() {
+function LoginForm({setIsVisible}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const[isLoggedIn,setIsLoggedIn] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -22,15 +22,22 @@ function LoginForm() {
     loginForm.append("password", password);
 
     try {
-      const response = await axios.post("http://localhost:8080/login",loginForm,{ withCredentials: true });
-  if (response.status === 200){
+      const response = await axios.post("http://localhost:8080/login",loginForm,{ withCredentials: true }
+  );
+  if (response.status === 204){
+    setIsVisible(false);
+
       navigate("/Profile")
+  
   }
     }catch(error){
       console.error("There was an error!");
     }
   };
 
+    if(isLoggedIn){
+      return null;
+    }
    
 
   return (
