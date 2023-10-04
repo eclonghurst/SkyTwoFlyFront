@@ -7,6 +7,7 @@ import axios from "axios";
 import FlightInput from "./FlightInput";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import airportData from "../airports.json";
 
 function ButtonBar() {
   const nav = useNavigate();
@@ -46,11 +47,14 @@ function ButtonBar() {
   }, [flightList]);
 
   const getFlights = async () => {
+    const ukAirportData = airportData.map((airport) => airport.name);
+    const indexDep = ukAirportData.indexOf(departure);
+    const indexArr = ukAirportData.indexOf(arrival);
     try {
       const res = await axios.get("http://localhost:8080/flights/getOneWay/", {
         params: {
-          fly_to: arrival,
-          fly_from: departure,
+          fly_to: airportData[indexArr].iata_code,
+          fly_from: airportData[indexDep].iata_code,
           date_from: dateFrom.toLocaleDateString("en-GB"),
           date_to: dateTo.toLocaleDateString("en-GB"),
           adults: adults,
@@ -76,20 +80,8 @@ function ButtonBar() {
       <div className="ButtonBarContainer">
         <h3 className="tagline">Sky's the Limit- Fly, your way!</h3>
         <form className="buttonBar-form" onSubmit={handleSubmit}>
-          <FlightInput
-            value={departure}
-            onChange={(e) => {
-              console.log(e.target.value);
-              setDeparture(e.target.value);
-            }}
-          />
-          <FlightInput
-            value={arrival}
-            onChange={(e) => {
-              console.log(e.target.value);
-              setArrival(e.target.value);
-            }}
-          />
+          <AutocompleteButton val={departure} setVal={setDeparture} />
+          <AutocompleteButton val={arrival} setVal={setArrival} />
           <div className="buttonContainer">
             <DatePicker
               className="autocompleteInputField"
