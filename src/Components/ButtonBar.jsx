@@ -111,7 +111,6 @@ function ButtonBar() {
               onChange={(dateTo) => setDateTo(dateTo)}
             />
           </div>
-
           <div className="buttonContainer">
             <label htmlFor="">
               <input
@@ -124,7 +123,6 @@ function ButtonBar() {
               />
             </label>
           </div>
-
           {/* <SearchButton onClick={handleSubmit}/> */}
           <button
             type="submit"
