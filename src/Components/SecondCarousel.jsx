@@ -6,28 +6,22 @@ const images = [
   {
     original: "/aquarium.jpg",
     description: "Aquarium visits",
-    originalHeight: "600px",
-    originalWidth: "1000px",
   },
   {
     original: "/beach.jpg",
     description: "Beach days",
-    originalHeight: "600px",
   },
   {
     original: "/hiking.jpg",
     description: "hiking trails",
-    originalHeight: "600px",
   },
   {
     original: "/fishing.jpg",
     description: "Fishing trips",
-    originalHeight: "600px",
   },
   {
     original: "/museum.jpg",
     description: "Museum days",
-    originalHeight: "600px",
   },
 ];
 
