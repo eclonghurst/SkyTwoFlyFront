@@ -1,16 +1,39 @@
 import React, { useState } from 'react';
 import '../CssFiles/RegistrationFormCSS.css';
 import SkyImage from "../Images/SkyLogo.png";
-
+import axios from 'axios';
+import {  useNavigate } from "react-router-dom";
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(`Email: ${email}`);
-    console.log(`Password: ${password}`);
-  };
+    // console.log(`Email: ${email}`);
+    // console.log(`Password: ${password}`);
+
+
+const loginForm = new FormData();
+
+        loginForm.append("username", email);
+
+        loginForm.append("password", password)
+        
+    try {
+      const response = await axios.post("http://localhost:8080/login",loginForm,{ withCredentials: true }
+  );
+  if (response.status === 200){
+
+      navigate("/Profile")
+  
+  }
+    }catch(error){
+      console.error("There was an error!");
+
+    }};
+
+   
 
   return (
     <div>

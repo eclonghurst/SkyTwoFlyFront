@@ -1,0 +1,27 @@
+.flight-pass {
+    border: 1px dashed #000;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #f7f7f7;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+.flight-pass-header {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+
+/* .qr-code {
+    position: center;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #ddd;
+} */

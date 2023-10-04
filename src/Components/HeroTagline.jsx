@@ -5,7 +5,7 @@ function HeroTagline() {
   return (
     <>
       <div className="heroTaglineContainer">
-        <h1>Top Destinations in Autumn</h1>
+        <h1 className="heroTagline">Top Destinations in Autumn</h1>
       </div>
     </>
   );

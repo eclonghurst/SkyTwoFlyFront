@@ -1,3 +1,20 @@
+@font-face {
+  font-family: "SkyRegular";
+  src: url(./SkyRegular.ttf);
+}
+@font-face {
+  font-family: "SkyBold";
+  src: url(./SkyBold.ttf);
+}
+@font-face {
+  font-family: "SkyMedium";
+  src: url(./SkyMedium.ttf);
+}
+@font-face {
+  font-family: "SkyLight";
+  src: url(./SkyLight.ttf);
+}
+
 /* BUTTONS */
 
 /* outer container */
@@ -25,9 +42,9 @@
   margin: 0;
   padding-bottom: 40px;
   text-align: center;
-  font-family: "PT Serif", serif;
+  font-family: "SkyRegular";
   font-weight: bold;
-  margin-left: -800px;
+  margin-left: -860px;
 }
 
 .buttonBar-form {
@@ -57,8 +74,8 @@
   padding: 10px;
   border: 4px solid rgba(255, 255, 255, 0.7);
   border-radius: 12px;
-
-  font-size: 16px;
+  font-family: "SkyRegular";
+  font-size: 18px;
   font-weight: 400;
   color: #fff;
 
@@ -124,4 +141,15 @@
 
 .searchButton:focus {
   outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
