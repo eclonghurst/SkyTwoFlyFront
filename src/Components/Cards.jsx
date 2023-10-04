@@ -1,22 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "../CssFiles/CardsCSS.css";
 import signpost from "../Images/signpost.png";
 
 function Cards() {
   return (
     <>
-      <div className="card-container">
-        <div className="cardOne card">
-          <img src={signpost} alt="" />
+      <div className="card-outer-container">
+        <div className="card-outline">
+          <img className="card-img" src={signpost} alt="" />
         </div>
-        <div className="cardOne card">
-          <img src={signpost} alt="" />
+        <div className="card-outline">
+          <img className="card-img" src={signpost} alt="" />
         </div>
-        <div className="cardOne card">
-          <img src={signpost} alt="" />
+        <div className="card-outline">
+          <img className="card-img" src={signpost} alt="" />
         </div>
-        <div className="cardOne card">
-          <img src={signpost} alt="" />
+        <div className="card-outline">
+          <img className="card-img" src={signpost} alt="" />
         </div>
       </div>
     </>

@@ -1,16 +1,27 @@
-.card-container {
+.card-outer-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.card {
-  background-color: rgb(243, 201, 246);
-  margin: 40px 25px 40px 25px;
-  width: 150px;
+.card-outline {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgb(255, 255, 255);
+  margin: 30px 20px 30px 20px;
+  width: 160px;
   height: 200px;
-  border: 4px solid rgb(150, 21, 150);
-  :hover {
-    transform: scale(1.2);
-  }
+  border: 4px solid rgb(186, 93, 186);
+  border-radius: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-outline:hover {
+  transform: scale(1.2);
+}
+
+.card-img {
+  width: 100px;
+  height: 120px;
 }
