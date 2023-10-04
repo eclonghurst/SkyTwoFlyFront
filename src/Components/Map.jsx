@@ -1,30 +1,35 @@
 import React from "react";
-import { useState } from "react";
-import ReactMapGL from "react-map-gl";
-import mapboxgl from "mapbox-gl";
+import { useState, useEffect, useRef } from "react";
+// import ReactMapGL from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "../CssFiles/MapCSS.css";
+import mapboxgl from 'mapbox-gl';
+mapboxgl.accessToken = 'pk.eyJ1IjoiYnItd2F0c29uIiwiYSI6ImNsbWYzbDE2cjI2YWIzZm14NjBzZGNtcmsifQ.ZYUdF_rHxMF7qdA93FndYA';
 
 
 function Map(){
 
-    const [viewport, setViewport] = useState({
-        height: "70%",
-        width: "70%",
-        latitude: 37.7577, 
-        longitude: -122.4376, 
-        zoom: 10, 
-      });
+  const mapContainer = useRef(null);
+const map = useRef(null);
+const [lng, setLng] = useState(-70.9);
+const [lat, setLat] = useState(42.35);
+const [zoom, setZoom] = useState(9);
+
+useEffect(() => {
+  if (map.current) return; // initialize map only once
+  map.current = new mapboxgl.Map({
+  container: mapContainer.current,
+  style: 'mapbox://styles/mapbox/streets-v12',
+  center: [lng, lat],
+  zoom: zoom
+  });
+  });
 
     return(
     <div className="map">
         <h3>Is a map displaying?</h3>
-         <ReactMapGL
-        viewState={viewport}
-        onViewportChange={newViewport => setViewport(newViewport)}
-        mapboxApiAccessToken='pk.eyJ1IjoiYnItd2F0c29uIiwiYSI6ImNsbWYzbDE2cjI2YWIzZm14NjBzZGNtcmsifQ.ZYUdF_rHxMF7qdA93FndYA'
-        mapStyle="mapbox://styles/mapbox/light-v9"
-      />
+        <div ref={mapContainer} className="map"/>
+
     </div>);
 
 

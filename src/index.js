@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
+import "mapbox-gl/dist/mapbox-gl.css";
 import ReactDom from "react-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
