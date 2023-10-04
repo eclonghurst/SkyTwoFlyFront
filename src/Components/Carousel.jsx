@@ -27,10 +27,15 @@ const images = [
 
 const Carousel = () => {
   return (
+
+    <div className="carousel-container">
+      <ImageGallery items={images} showBullets={true} />
+
     <div className="carousel-outer-container">
       <div className="carousel-container">
         <ImageGallery className="carousel" items={images} showBullets={true} />
       </div>
+
     </div>
   );
 };
