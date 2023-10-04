@@ -3,7 +3,7 @@ import "../CssFiles/NavBarCSS.css";
 
 import { Link } from "react-router-dom";
 import Login from "./Login";
-import SkyImage from "../Images/SkyLogo.png";
+import SkyImage from "../Images/SkyLogo3.png";
 
 const NavBar = ({ onFaviconClick }) => {
   return (
