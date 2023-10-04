@@ -1,11 +1,18 @@
 @font-face {
-  font-family: "SkyFont";
-  src: url(./SkyText_W_Lt.ttf);
+  font-family: "SkyRegular";
+  src: url(./SkyRegular.ttf);
 }
-
 @font-face {
   font-family: "SkyBold";
-  src: url(./Sky_Bold.ttf);
+  src: url(./SkyBold.ttf);
+}
+@font-face {
+  font-family: "SkyMedium";
+  src: url(./SkyMedium.ttf);
+}
+@font-face {
+  font-family: "SkyLight";
+  src: url(./SkyLight.ttf);
 }
 
 nav.navbar {
@@ -44,6 +51,7 @@ a.navbar-brand:active {
 
 a.nav-link {
   color: white;
+  font-family: "SkyMedium";
 }
 
 .brand-logo {
