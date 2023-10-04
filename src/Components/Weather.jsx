@@ -45,7 +45,7 @@ function Weather(props) {
   return (
     <>
       <div className="weather">
-        <h2 className="weather-header">Your destination's weather: </h2>
+        <h2 className="weather-header">The weather at your destination... </h2>
         <div className="location-and-icon">
           <h2 className="city-country-hearder">
             {locationDetails.city}, {locationDetails.country}

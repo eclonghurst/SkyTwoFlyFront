@@ -4,11 +4,19 @@ import airlineLogo from "../Images/airlineLogo.png";
 import aircraft from "../Images/aircraft.png";
 import { Link } from "react-router-dom";
 import airlineJSON from "../airlines.json";
+import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function Flight(props) {
+  const navigate = useNavigate();
+
   const airlineList = airlineJSON.find(
-    (airline) => props.airline.toLowerCase() == airline.id.toLowerCase()
+    (airline) => props.airline?.toLowerCase() == airline.id.toLowerCase()
   );
+
+  const handleClick = () => {
+    navigate("/BookingPage", { replace: true, state: props });
+  };
 
   return (
     <>
@@ -33,9 +41,9 @@ function Flight(props) {
           <div className="container-flight-details-price">
             <p>£{props.price}</p>
 
-            <Link to="/BookingPage" state={{ destination: props.destination }}>
-              <button className="book-button">Book</button>
-            </Link>
+            <button onClick={handleClick} className="book-button">
+              Book
+            </button>
           </div>
         </div>
       </div>
