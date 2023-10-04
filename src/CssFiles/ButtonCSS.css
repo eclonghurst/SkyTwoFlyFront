@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "SkyFont";
+  src: url(./SkyText_W_Lt.ttf);
+}
+
+@font-face {
+  font-family: "SkyBold";
+  src: url(./Sky_Bold.ttf);
+}
+
 /* BUTTONS */
 
 /* outer container */
@@ -25,9 +35,9 @@
   margin: 0;
   padding-bottom: 40px;
   text-align: center;
-  font-family: "PT Serif", serif;
+  font-family: "SkyFont";
   font-weight: bold;
-  margin-left: -800px;
+  margin-left: -860px;
 }
 
 .buttonBar-form {
