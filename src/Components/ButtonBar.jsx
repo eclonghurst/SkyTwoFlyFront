@@ -104,7 +104,6 @@ function ButtonBar() {
               onChange={(dateTo) => setDateTo(dateTo)}
             />
           </div>
-
           <FlightInput
             value={adults}
             onChange={(e) => {
