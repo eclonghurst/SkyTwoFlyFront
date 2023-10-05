@@ -4,11 +4,10 @@ import SkyImage from "../Images/SkyLogo.png";
 
 import axios from 'axios';
 import {  useNavigate } from "react-router-dom";
-function LoginForm({setIsVisible}) {
+function LoginForm(setLoggedIn,setIsVisible) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const[isLoggedIn,setIsLoggedIn] = useState(false);
   const [error,setError] = useState("")
 
   const handleSubmit = async (event) => {
@@ -26,6 +25,7 @@ function LoginForm({setIsVisible}) {
       const response = await axios.post("http://localhost:8080/login",loginForm,{ withCredentials: true }
   );
   if (response.status === 200){
+
     setIsVisible(false);
 
       navigate("/Profile")
@@ -37,10 +37,7 @@ function LoginForm({setIsVisible}) {
     }
   };
 
-    if(isLoggedIn){
-      return null;
-    }
-   
+  
     
 
   return ( 
