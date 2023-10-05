@@ -82,7 +82,7 @@ ul.navbar-nav {
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-collapse {
     justify-content: center;
-    padding-left: 800px;
+    padding-left: 680px;
   }
 }
 

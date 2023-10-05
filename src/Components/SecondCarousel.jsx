@@ -28,6 +28,7 @@ const images = [
 const Carousel = () => {
   return (
     <div className="carousel-outer-container">
+      <h1 style={{ color: "purple" }}>Trending activities</h1>
       <div className="carousel-container">
         <ImageGallery items={images} showBullets={true} />
       </div>
