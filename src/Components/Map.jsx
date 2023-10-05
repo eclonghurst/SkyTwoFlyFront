@@ -1,11 +1,13 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 // import ReactMapGL from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "../CssFiles/MapCSS.css";
 import airportJSON from "../airports.json";
 import mapboxgl from 'mapbox-gl';
-import { Marker } from "react-map-gl";
+import { Marker, Souce, Layer } from "react-map-gl";
+import {FeatureCollection} from 'geojson';
+import GeoJSON from 'geojson';
 mapboxgl.accessToken = 'pk.eyJ1IjoiYnItd2F0c29uIiwiYSI6ImNsbWYzbDE2cjI2YWIzZm14NjBzZGNtcmsifQ.ZYUdF_rHxMF7qdA93FndYA';
 
 
@@ -21,6 +23,25 @@ function Map(props){
   const mapContainer = useRef(null);
 const map = useRef(null);
 
+const geojson = {
+  'type': 'FeatureCollection',
+  'features': [
+  {
+  'type': 'Feature',
+  'geometry': {
+  'type': 'LineString',
+  'coordinates': [[airportCoordsDept.longitude_deg, airportCoordsDept.latitude_deg],
+  [airportCoordsDest.longitude_deg, airportCoordsDest.latitude_deg]]
+  }
+  }
+  ]
+  };
+
+  const speedFactor = 30;
+  let animation;
+  let startTime=0;
+  let progress=0;
+  let resetTime = false;
 
 
 
@@ -39,7 +60,32 @@ useEffect(() => {
   const marker2 = new mapboxgl.Marker({"color":"rgba(169, 62, 214)"})
 .setLngLat([airportCoordsDest.longitude_deg, airportCoordsDest.latitude_deg])
 .addTo(map.current);
+
+map.current.on('load', () => {
+  map.current.addSource('line', {
+  'type': 'geojson',
+  'data': geojson
   });
+
+  map.current.addLayer({
+    'id': 'line-animation',
+    'type': 'line',
+    'source': 'line',
+    'layout': {
+    'line-cap': 'round',
+    'line-join': 'round'
+    },
+    'paint': {
+    'line-color': '#ed6498',
+    'line-width': 5,
+    'line-opacity': 0.8
+    }
+    });
+  });
+
+
+  });
+
 
     return(
     <div className="map">
