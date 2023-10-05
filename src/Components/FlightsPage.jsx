@@ -15,7 +15,13 @@ function FlightsPage() {
       key={i}
       depart={flightList[i].flyFrom}
       destination={flightList[i].flyTo}
+      cityFrom={flightList[i].cityFrom}
+      cityTo={flightList[i].cityTo}
+      outboundDate={flightList[i].outboundDate}
+      localDeparture={flightList[i].localDeparture}
+      localArrival={flightList[i].localArrival}
       price={flightList[i].fare.adults}
+      routes={flightList[i].routes}
       airline={flightList[i].airlines[0]}
       duration={flightList[i].duration}
     >

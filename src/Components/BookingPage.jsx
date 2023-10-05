@@ -9,27 +9,29 @@ function BookingPage() {
 
   console.log(location.state);
 
-
-    return(
-        <>
-     <Flight {...location.state} />
-        <label for="confirm">Book GetYourWay flights today...     </label>
-        <button className="confirm-button" id="confirm">Confirm</button>
-        <div className="container-for-map">
-            <p>
-
-            </p>
-
-            <p>
-
-            </p>
-            <p>This is a container for the map. Map details for {location.state.destination} </p>
-        </div>
-        <Map destination={location.state.destination} depart={location.state.depart}/>
-        </>
-    )
+  const bookFlight = async () => {};
 
 
+  return (
+    <>
+      <Flight {...location.state} bookingActive={true} />
+      {/* <label htmlFor="confirm">Book GetYourWay flights today... </label>
+      <button id="confirm" onClick={bookFlight}>
+        Confirm
+      </button> */}
+      <div className="container-for-map">
+        <p></p>
+
+
+        <p></p>
+        <p>
+          This is a container for the map. 
+          {location.state.destination}
+        </p>
+      </div>
+      <Map destination={location.state.destination} depart={location.state.depart}/>
+    </>
+  );
 }
 
 export default BookingPage;

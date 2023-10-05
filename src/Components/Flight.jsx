@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import airlineJSON from "../airlines.json";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 function Flight(props) {
   const navigate = useNavigate();
@@ -14,8 +15,72 @@ function Flight(props) {
     (airline) => props.airline?.toLowerCase() == airline.id.toLowerCase()
   );
 
+  const bookFlight = async () => {
+    const userRes = await axios.get("http://localhost:8080/users/user", {
+      withCredentials: true,
+    });
+    if (userRes.status == 401) {
+      alert("Please log in to book a flight");
+      return;
+    }
+    const userIdRes = await axios.get(
+      "http://localhost:8080/users/getUserID/" + userRes.data,
+      { withCredentials: true }
+    );
+
+    const bookRes = await axios.post(
+      "http://localhost:8080/bookings/create",
+      {
+        flightTo: props.destination,
+        flightFrom: props.depart,
+        flightNumber: props.routes.flightNo,
+        adults: props.adults,
+        bookingDate: new Date(),
+        outboundDate: props.localDeparture,
+        fare: props.price,
+        cityFrom: props.cityFrom,
+        cityTo: props.cityTo,
+        localDeparture: props.localDeparture,
+        localArrival: props.localArrival,
+        routes: [
+          {
+            airportFrom: props.depart,
+            airportTo: props.destination,
+            airline: props.airline,
+            flightNo: props.flightNo,
+            cabin: props.cabin,
+          },
+        ],
+        user: {
+          userId: userIdRes.data,
+        },
+      },
+      { withCredentials: true }
+    );
+    console.log("hello");
+    console.log(bookRes.status);
+    console.log(bookRes.data);
+    console.log("hello");
+    if (bookRes.status == 201) {
+      alert("Flight booked!");
+    }
+
+    const bookingRes2 = await axios.get(
+      "http://localhost:8080/bookings/getall/" + userIdRes.data,
+      {
+        withCredentials: true,
+      }
+    );
+    console.log(bookingRes2.data);
+  };
+
   const handleClick = () => {
-    navigate("/BookingPage", { replace: true, state: props });
+    if (props.bookingActive) {
+      bookFlight();
+      navigate("/Profile", { replace: true });
+    } else {
+      navigate("/BookingPage", { replace: true, state: props });
+    }
   };
 
   return (

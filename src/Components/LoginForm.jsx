@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import "../CssFiles/RegistrationFormCSS.css";
 import SkyImage from "../Images/SkyLogo.png";
 
-import axios from 'axios';
-import {  useNavigate } from "react-router-dom";
-function LoginForm({setIsVisible}) {
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+function LoginForm({ setIsVisible }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const[isLoggedIn,setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -22,23 +23,27 @@ function LoginForm({setIsVisible}) {
     loginForm.append("password", password);
 
     try {
-      const response = await axios.post("http://localhost:8080/login",loginForm,{ withCredentials: true }
-  );
-  if (response.status === 204){
-    setIsVisible(false);
+      const response = await axios.post(
+        "http://localhost:8080/login",
+        loginForm,
+        { withCredentials: true }
+      );
+      if (response.status === 200) {
+        setIsVisible(false);
 
-      navigate("/Profile")
-  
-  }
-    }catch(error){
-      console.error("There was an error!");
+        navigate("/Profile");
+      }
+    } catch (err) {
+      setError(
+        "Please check your password or register if you do not have an account!"
+      );
+      console.error("There was an error!", err);
     }
   };
 
-    if(isLoggedIn){
-      return null;
-    }
-   
+  if (isLoggedIn) {
+    return null;
+  }
 
   return (
     <div>
@@ -77,6 +82,7 @@ function LoginForm({setIsVisible}) {
         <button type="submit" className="btn btn-primary">
           Login
         </button>
+        {error && <p className="error-text">{error}</p>}
       </form>
     </div>
   );

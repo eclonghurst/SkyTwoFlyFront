@@ -54,6 +54,35 @@
 
 .buttonContainer {
   padding: 10px;
+  position: relative;
+}
+
+.buttonContainer__input {
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: outline-color 250ms;
+}
+.buttonContainer__input:focus {
+  outline-color: #3c50eb;
+}
+
+.buttonContainer__label {
+  font-family: "SkyRegular";
+  position: absolute;
+  top: 37px;
+  left: 10px;
+  transform: translate(10px, 10px) scale(1.1);
+  transform-origin: left;
+  color: #fff;
+  transition: transform 200ms;
+}
+
+.buttonContainer__input:focus + .buttonContainer__label,
+.buttonContainer__input:valid + .buttonContainer__label {
+  transform: translate(10px, -10px) scale(0.9);
 }
 
 /* onClick border (removed) */

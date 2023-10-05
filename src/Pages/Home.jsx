@@ -3,15 +3,17 @@ import ButtonBar from "../Components/ButtonBar";
 import HeroTagline from "../Components/HeroTagline";
 import Carousel from "../Components/Carousel";
 import SecondCarousel from "../Components/SecondCarousel";
-function Home(){
-    return(
+import Cards from "../Components/Cards";
+function Home() {
+  return (
     <>
-        <ButtonBar/>
-        <HeroTagline/>
-        <Carousel/>
-        <SecondCarousel/>
+      <ButtonBar />
+      <HeroTagline />
+      <Carousel />
+      <Cards />
+      <SecondCarousel />
     </>
-    );
+  );
 }
 
 export default Home;
