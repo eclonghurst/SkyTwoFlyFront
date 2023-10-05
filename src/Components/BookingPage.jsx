@@ -21,12 +21,10 @@ function BookingPage() {
       </button> */}
       <div className="container-for-map">
         <p></p>
-
-
         <p></p>
-        
-      
       <Map className="mapbox-map" destination={location.state.destination} depart={location.state.depart}/>
+      </div>
+      <div className="push">
       </div>
     
     </>
