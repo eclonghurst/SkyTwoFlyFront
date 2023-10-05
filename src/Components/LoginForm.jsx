@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import "../CssFiles/RegistrationFormCSS.css";
 import SkyImage from "../Images/SkyLogo.png";
 
-import axios from 'axios';
-import {  useNavigate } from "react-router-dom";
-function LoginForm({setIsVisible}) {
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+function LoginForm(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const[isLoggedIn,setIsLoggedIn] = useState(false);
-  const [error,setError] = useState("")
+  const [error, setError] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -23,27 +22,25 @@ function LoginForm({setIsVisible}) {
     loginForm.append("password", password);
 
     try {
-      const response = await axios.post("http://localhost:8080/login",loginForm,{ withCredentials: true }
-  );
-  if (response.status === 200){
-    setIsVisible(false);
-
-      navigate("/Profile")
-  
-  }
-    }catch(err){
-      setError("Please check your password or register if you do not have an account!")
-      console.error("There was an error!",err);
+      const response = await axios.post(
+        "http://localhost:8080/login",
+        loginForm,
+        { withCredentials: true }
+      );
+      if (response.status === 200) {
+        props.setIsVisible(() => false);
+        props.setLoggedIn(() => true);
+        navigate("/Profile");
+      }
+    } catch (err) {
+      setError(
+        "Please check your password or register if you do not have an account!"
+      );
+      console.error("There was an error!", err);
     }
   };
 
-    if(isLoggedIn){
-      return null;
-    }
-   
-    
-
-  return ( 
+  return (
     <div>
       <h1 style={{ textAlign: "center" }}>
         GetYourWay |{" "}

@@ -8,3 +8,7 @@
   .confirm-button:hover {
     background: #ff91ee;
   }
+
+  .mapbox-map{
+padding-bottom: 300px;
+  }

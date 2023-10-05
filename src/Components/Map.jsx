@@ -51,8 +51,8 @@ useEffect(() => {
   map.current = new mapboxgl.Map({
   container: mapContainer.current,
   style: 'mapbox://styles/mapbox/streets-v12',
-  center: [airportCoordsDest.longitude_deg, airportCoordsDest.latitude_deg],
-  zoom: 2.5
+  center: [(airportCoordsDept.longitude_deg+airportCoordsDest.longitude_deg)/2, (airportCoordsDept.latitude_deg+airportCoordsDest.latitude_deg)/2],
+  zoom: 3
   });
   const marker1 = new mapboxgl.Marker({"color":"rgba(169, 62, 214)"})
 .setLngLat([airportCoordsDept.longitude_deg, airportCoordsDept.latitude_deg])

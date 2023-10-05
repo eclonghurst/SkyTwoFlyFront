@@ -24,12 +24,11 @@ function BookingPage() {
 
 
         <p></p>
-        <p>
-          This is a container for the map. 
-          {location.state.destination}
-        </p>
+        
+      
+      <Map className="mapbox-map" destination={location.state.destination} depart={location.state.depart}/>
       </div>
-      <Map destination={location.state.destination} depart={location.state.depart}/>
+    
     </>
   );
 }
