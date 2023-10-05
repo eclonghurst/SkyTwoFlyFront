@@ -9,6 +9,7 @@ function LoginForm({setIsVisible}) {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const[isLoggedIn,setIsLoggedIn] = useState(false);
+  const [error,setError] = useState("")
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -30,8 +31,10 @@ function LoginForm({setIsVisible}) {
       navigate("/Profile")
   
   }
-    }catch(error){
-      console.error("There was an error!");
+    }catch(err){
+      setError("Please check your password or register if you do not have an account!")
+      console.error("There was an error!",err);
+      
     }
   };
 
@@ -39,8 +42,9 @@ function LoginForm({setIsVisible}) {
       return null;
     }
    
+    
 
-  return (
+  return ( 
     <div>
       <h1 style={{ textAlign: "center" }}>
         GetYourWay |{" "}
@@ -77,6 +81,7 @@ function LoginForm({setIsVisible}) {
         <button type="submit" className="btn btn-primary">
           Login
         </button>
+        {error && <p className="error-text">{error}</p>}
       </form>
     </div>
   );
