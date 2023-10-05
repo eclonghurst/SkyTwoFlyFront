@@ -76,13 +76,13 @@ ul.navbar-nav {
 }
 
 .accountIcon {
-  margin-right: 100px;
+  margin-right: 20px;
 }
 
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-collapse {
     justify-content: center;
-    padding-left: 680px;
+    padding-left: 900px;
   }
 }
 
