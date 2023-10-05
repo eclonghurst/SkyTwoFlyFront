@@ -51,6 +51,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding-left: 50px;
 }
 
 .buttonContainer {
