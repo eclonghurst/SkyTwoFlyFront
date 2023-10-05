@@ -79,7 +79,11 @@ function ButtonBar() {
     <>
       <div className="ButtonBarContainer">
         <h3 className="tagline">Sky's the Limit - Fly, your way!</h3>
-        <form className="buttonBar-form" onSubmit={handleSubmit}>
+        <form
+          className="buttonBar-form"
+          onSubmit={handleSubmit}
+          autoComplete="off"
+        >
           <AutocompleteButton
             val={departure}
             setVal={setDeparture}
