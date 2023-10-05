@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
 import axios from "axios";
 
 function Flight(props) {
+  const [booked, setBooked] = React.useState(false);
   const navigate = useNavigate();
 
   const airlineList = airlineJSON.find(
@@ -57,30 +58,24 @@ function Flight(props) {
       },
       { withCredentials: true }
     );
-    console.log("hello");
-    console.log(bookRes.status);
-    console.log(bookRes.data);
-    console.log("hello");
+    // console.log(bookRes.status);
+    // console.log(bookRes.data);
     if (bookRes.status == 201) {
-      alert("Flight booked!");
+      setBooked(true);
+      alert("Flight booked!"); //change to something nicer maybe???
     }
-
-    const bookingRes2 = await axios.get(
-      "http://localhost:8080/bookings/getall/" + userIdRes.data,
-      {
-        withCredentials: true,
-      }
-    );
-    console.log(bookingRes2.data);
   };
 
   const handleClick = () => {
     if (props.bookingActive) {
       bookFlight();
-      navigate("/Profile", { replace: true });
     } else {
       navigate("/BookingPage", { replace: true, state: props });
     }
+  };
+
+  const handleProfileClick = () => {
+    navigate("/Profile", { replace: true });
   };
 
   return (
@@ -104,11 +99,22 @@ function Flight(props) {
             <div className="destination">{props.destination}</div>
           </div>
           <div className="container-flight-details-price">
-            <p>£{props.price}</p>
-
-            <button onClick={handleClick} className="book-button">
-              Book
-            </button>
+            {!booked && (
+              <>
+                <p>£{props.price}</p>
+                <button onClick={handleClick} className="book-button">
+                  Book
+                </button>
+              </>
+            )}
+            {booked && (
+              <>
+                <p>You have successfully booked your flight!</p>
+                <button onClick={handleProfileClick} className="book-button">
+                  View your bookings!
+                </button>
+              </>
+            )}
           </div>
         </div>
       </div>
