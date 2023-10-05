@@ -2,9 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .carousel-container {
   width: 750px;
   margin: 10px 0px 10px 0px;
+}
+
+img {
+  border-radius: 40px;
 }

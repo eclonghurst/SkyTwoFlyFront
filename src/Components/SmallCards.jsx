@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../CssFiles/CardsCSS.css";
+import "../CssFiles/SmallCardsCSS.css";
 import bus from "../Images/bus2.jpg";
 import train from "../Images/train2.jpg";
 import taxi from "../Images/bike.jpg";
@@ -12,25 +12,21 @@ function Cards() {
         <div className="card-outline">
           <div className="img-container">
             <img className="card-img" src={bus} alt="" />
-            <h5 className="card-text">Bus schedule</h5>
           </div>
         </div>
         <div className="card-outline">
           <div className="img-container">
             <img className="card-img" src={train} alt="" />
-            <h5 className="card-text">Train travel</h5>
           </div>
         </div>
         <div className="card-outline">
           <div className="img-container">
             <img className="card-img" src={taxi} alt="" />
-            <h5 className="card-text">Bike hire</h5>
           </div>
         </div>
         <div className="card-outline">
           <div className="img-container">
             <img className="card-img" src={ferry} alt="" />
-            <h5 className="card-text">Ferry rides</h5>
           </div>
         </div>
       </div>
