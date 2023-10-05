@@ -1,55 +1,48 @@
-.card-outer-container {
+@font-face {
+  font-family: "SkyRegular";
+  src: url(./SkyRegular.ttf);
+}
+@font-face {
+  font-family: "SkyBold";
+  src: url(./SkyBold.ttf);
+}
+@font-face {
+  font-family: "SkyMedium";
+  src: url(./SkyMedium.ttf);
+}
+@font-face {
+  font-family: "SkyLight";
+  src: url(./SkyLight.ttf);
+}
+
+.card-outer-container2 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.card-outline {
+.card-outline2 {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  background-color: rgb(255, 255, 255);
+  align-items: center;
   margin: 30px 20px 30px 20px;
   width: 150px;
-  height: 200px;
-  border-radius: 30px;
+  height: 40px;
+  border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
-  background-color: #fff;
+  background-color: #9923ab;
   color: #161616;
   text-decoration: none;
-  cursor: pointer;
+  cursor: grab;
   box-shadow: 0 1px 3px 0 rgba(80, 12, 82, 0.3);
 }
 
-.card-outline:hover {
+.card-outline2:hover {
   transform: scale(1.2);
 }
 
-.card-img {
-  z-index: 0;
-  width: 150px;
-  height: 130px;
-  -webkit-mask-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(rgba(0, 0, 0, 1)),
-    to(rgba(0, 0, 0, 0))
-  );
-  mask-image: linear-gradient(
-    360deg,
-    rgba(29, 0, 65, 1) 0%,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 25%
-  );
-}
-
-.card-text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 12px;
-  z-index: 3;
-  color: rgb(179, 95, 179);
+.smallcard-text {
+  color: white;
+  font-family: "SkyRegular";
 }

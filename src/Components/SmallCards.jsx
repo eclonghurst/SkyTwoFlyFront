@@ -8,26 +8,18 @@ import ferry from "../Images/boat2.png";
 function Cards() {
   return (
     <>
-      <div className="card-outer-container">
-        <div className="card-outline">
-          <div className="img-container">
-            <img className="card-img" src={bus} alt="" />
-          </div>
+      <div className="card-outer-container2">
+        <div className="card-outline2">
+          <h5 className="smallcard-text">Hotels</h5>
         </div>
-        <div className="card-outline">
-          <div className="img-container">
-            <img className="card-img" src={train} alt="" />
-          </div>
+        <div className="card-outline2">
+          <h5 className="smallcard-text">Transfers</h5>
         </div>
-        <div className="card-outline">
-          <div className="img-container">
-            <img className="card-img" src={taxi} alt="" />
-          </div>
+        <div className="card-outline2">
+          <h5 className="smallcard-text">Sky protect</h5>
         </div>
-        <div className="card-outline">
-          <div className="img-container">
-            <img className="card-img" src={ferry} alt="" />
-          </div>
+        <div className="card-outline2">
+          <h5 className="smallcard-text">Offers</h5>
         </div>
       </div>
     </>
