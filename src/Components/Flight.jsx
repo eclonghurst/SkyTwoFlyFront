@@ -36,7 +36,7 @@ function Flight(props) {
         flightFrom: props.depart,
         flightNumber: props.routes.flightNo,
         adults: props.adults,
-        bookingDate: new Date(),
+        bookingDate: new Date().toLocaleDateString().substring(0, 10),
         outboundDate: props.localDeparture,
         fare: props.price,
         cityFrom: props.cityFrom,
