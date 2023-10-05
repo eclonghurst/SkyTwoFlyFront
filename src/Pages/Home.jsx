@@ -5,6 +5,8 @@ import Carousel from "../Components/Carousel";
 import SecondCarousel from "../Components/SecondCarousel";
 import Cards from "../Components/Cards";
 import SmallCards from "../Components/SmallCards";
+import HeroText from "../Components/HeroText";
+
 function Home() {
   return (
     <>
@@ -12,6 +14,7 @@ function Home() {
       <SmallCards />
       <HeroTagline />
       <Carousel />
+      <HeroText />
       <Cards />
       <SecondCarousel />
     </>
