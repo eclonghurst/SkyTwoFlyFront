@@ -5,28 +5,36 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import "../CssFiles/LoginFormCSS.css";
 
-function Login() {
-  const [isVisible, setIsVisible] = useState(false);
+function Login(props) {
+  // const [isVisible, setIsVisible] = useState(false);
   const [isLoginForm, setIsLoginForm] = useState(true);
   const toggleForm = () => setIsLoginForm(!isLoginForm);
+
+  const handleVisible = () => {
+    props.setIsVisible(() => true);
+  };
+
   return (
     <div>
       <FontAwesomeIcon
         className="accountIcon"
         icon={faUser}
         style={{ color: "#ffffff" }}
-        onClick={() => setIsVisible(true)}
+        onClick={handleVisible}
       />
-      {isVisible && (
-        <div className="backdrop" onClick={() => setIsVisible(false)}>
+      {props.isVisible && (
+        <div className="backdrop" onClick={() => props.setIsVisible(false)}>
           <div
             className={`form-container`}
             onClick={(e) => e.stopPropagation()}
           >
             {isLoginForm ? (
-              <LoginForm setIsVisible={setIsVisible} />
+              <LoginForm
+                setIsVisible={props.setIsVisible}
+                setLoggedIn={props.setLoggedIn}
+              />
             ) : (
-              <RegistrationForm setIsVisible={setIsVisible} />
+              <RegistrationForm setIsVisible={props.setIsVisible} />
             )}
             <button className="toggle-form-button" onClick={toggleForm}>
               {isLoginForm

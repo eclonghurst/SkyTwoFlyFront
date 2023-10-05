@@ -1,14 +1,25 @@
 import "../CssFiles/NavBarCSS.css";
 import React from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, Navigate } from "react-router-dom";
 import Login from "./Login";
 import SkyImage from "../Images/SkyLogo3.png";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const NavBar = ({ loggedIn, setLoggedIn, onFaviconClick }) => {
-
-  const handleLogout = () => {
-    setLoggedIn(false);
-  }
+const NavBar = (props) => {
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    try {
+      const response = await axios.post("http://localhost:8080/logout", {
+        withCredentials: true,
+      });
+    } catch (error) {
+      props.setLoggedIn(false);
+      alert("You have been logged out!");
+      navigate("/");
+    }
+  };
 
   return (
     <nav className="navbar navbar-expand-lg">
@@ -30,7 +41,7 @@ const NavBar = ({ loggedIn, setLoggedIn, onFaviconClick }) => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ml-auto">
-            {loggedIn ? (
+            {props.loggedIn && (
               <>
                 <li className="nav-item">
                   <Link className="nav-link" to="Profile">
@@ -38,20 +49,33 @@ const NavBar = ({ loggedIn, setLoggedIn, onFaviconClick }) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <button onClick={handleLogout} className="nav-link" style={{ background: 'none', border: 'none' }}>
+                  <button
+                    onClick={handleLogout}
+                    className="nav-link"
+                    style={{ background: "none", border: "none" }}
+                  >
                     Log out
                   </button>
                 </li>
               </>
-            ) : (
+            )}
+
+            {/* {!loggedIn && (
               <li className="nav-item">
                 <Link className="nav-link" to="SignIn">
                   Log in
                 </Link>
               </li>
-            )}
+            )} */}
           </ul>
-          {!loggedIn && <Login />}
+          {!props.loggedIn && (
+            <Login
+              loggedIn={props.loggedIn}
+              setLoggedIn={props.setLoggedIn}
+              isVisible={props.isVisible}
+              setIsVisible={props.setIsVisible}
+            />
+          )}
         </div>
       </div>
     </nav>
