@@ -12,7 +12,9 @@ const NavBar = (props) => {
   const handleLogout = async () => {
     try {
       const response = await axios.post(
-        `${!process ? "/api" : "http://localhost:8080"}/logout`,
+        `${
+          typeof process === "undefined" ? "/api" : "http://localhost:8080"
+        }/logout`,
         {
           withCredentials: true,
         }

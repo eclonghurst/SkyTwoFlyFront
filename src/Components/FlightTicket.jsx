@@ -23,7 +23,9 @@ function FlightTicket() {
   const getUserEmail = async () => {
     try {
       const emailRes = await axios.get(
-        `${!process ? "/api" : "http://localhost:8080"}/users/user`,
+        `${
+          typeof process === "undefined" ? "/api" : "http://localhost:8080"
+        }/users/user`,
         {
           withCredentials: true,
         }
@@ -37,8 +39,9 @@ function FlightTicket() {
   const getUserID = async () => {
     try {
       const idRes = await axios.get(
-        `${!process ? "/api" : "http://localhost:8080"}/users/getUserID/` +
-          email,
+        `${
+          typeof process === "undefined" ? "/api" : "http://localhost:8080"
+        }/users/getUserID/` + email,
         {
           withCredentials: true,
         }
@@ -52,8 +55,9 @@ function FlightTicket() {
   const getPassengerData = async () => {
     try {
       const passengerData = await axios.get(
-        `${!process ? "/api" : "http://localhost:8080"}/users/getUserDetails/` +
-          id,
+        `${
+          typeof process === "undefined" ? "/api" : "http://localhost:8080"
+        }/users/getUserDetails/` + id,
         {
           withCredentials: true,
         }
@@ -67,7 +71,9 @@ function FlightTicket() {
   const getBookings = async () => {
     try {
       const bookingsRes = await axios.get(
-        `${!process ? "/api" : "http://localhost:8080"}/bookings/getall/` + id,
+        `${
+          typeof process === "undefined" ? "/api" : "http://localhost:8080"
+        }/bookings/getall/` + id,
         {
           withCredentials: true,
         }

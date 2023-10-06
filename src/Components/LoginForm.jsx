@@ -23,7 +23,9 @@ function LoginForm(props) {
 
     try {
       const response = await axios.post(
-        `${!process ? "/api" : "http://localhost:8080"}/login`,
+        `${
+          typeof process === "undefined" ? "/api" : "http://localhost:8080"
+        }/login`,
         loginForm,
         { withCredentials: true }
       );
