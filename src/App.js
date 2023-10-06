@@ -26,9 +26,16 @@ function App() {
 
   const checkUser = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/users/user", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        `${
+          process.env.NODE_ENV === "production"
+            ? "/api"
+            : "http://localhost:8080"
+        }/users/user`,
+        {
+          withCredentials: true,
+        }
+      );
       if (response.status == 201) {
         setLoggedIn(() => true);
       }
@@ -51,7 +58,6 @@ function App() {
         <Route path="/Flights" element={<FlightsPage />} />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/Profile" element={<Profile />} />
-        <Route path="/flight" element={<Flight />} />
         <Route path="/BookingPage" element={<BookingPage />} />
       </Routes>
       <Footer />

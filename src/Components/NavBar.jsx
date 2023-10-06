@@ -11,9 +11,16 @@ const NavBar = (props) => {
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {
-      const response = await axios.post("http://localhost:8080/logout", {
-        withCredentials: true,
-      });
+      const response = await axios.post(
+        `${
+          process.env.NODE_ENV === "production"
+            ? "/api"
+            : "http://localhost:8080"
+        }/logout`,
+        {
+          withCredentials: true,
+        }
+      );
     } catch (error) {
       props.setLoggedIn(false);
       alert("You have been logged out!");
