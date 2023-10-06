@@ -50,15 +50,20 @@ function ButtonBar() {
     const indexDep = ukAirportData.indexOf(departure);
     const indexArr = ukAirportData.indexOf(arrival);
     try {
-      const res = await axios.get("http://localhost:8080/flights/getOneWay/", {
-        params: {
-          fly_to: airportData[indexArr].iata_code,
-          fly_from: airportData[indexDep].iata_code,
-          date_from: dateFrom.toLocaleDateString("en-GB"),
-          date_to: dateTo.toLocaleDateString("en-GB"),
-          adults: adults,
-        },
-      });
+      const res = await axios.get(
+        `${
+          typeof process === "undefined" ? "/api" : "http://localhost:8080"
+        }/flights/getOneWay/`,
+        {
+          params: {
+            fly_to: airportData[indexArr].iata_code,
+            fly_from: airportData[indexDep].iata_code,
+            date_from: dateFrom.toLocaleDateString("en-GB"),
+            date_to: dateTo.toLocaleDateString("en-GB"),
+            adults: adults,
+          },
+        }
+      );
       // console.log(res.data);
       // console.log(res.data[0].cityTo);
       const resultData = res.data;

@@ -26,9 +26,14 @@ function App() {
 
   const checkUser = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/users/user", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        `${
+          typeof process === "undefined" ? "/api" : "http://localhost:8080"
+        }/users/user`,
+        {
+          withCredentials: true,
+        }
+      );
       if (response.status == 201) {
         setLoggedIn(() => true);
       }

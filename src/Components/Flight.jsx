@@ -17,20 +17,29 @@ function Flight(props) {
   );
 
   const bookFlight = async () => {
-    const userRes = await axios.get("http://localhost:8080/users/user", {
-      withCredentials: true,
-    });
+    const userRes = await axios.get(
+      `${
+        typeof process === "undefined" ? "/api" : "http://localhost:8080"
+      }/users/user`,
+      {
+        withCredentials: true,
+      }
+    );
     if (userRes.status == 401) {
       alert("Please log in to book a flight");
       return;
     }
     const userIdRes = await axios.get(
-      "http://localhost:8080/users/getUserID/" + userRes.data,
+      `${
+        typeof process === "undefined" ? "/api" : "http://localhost:8080"
+      }/users/getUserID/` + userRes.data,
       { withCredentials: true }
     );
 
     const bookRes = await axios.post(
-      "http://localhost:8080/bookings/create",
+      `${
+        typeof process === "undefined" ? "/api" : "http://localhost:8080"
+      }/bookings/create`,
       {
         flightTo: props.destination,
         flightFrom: props.depart,

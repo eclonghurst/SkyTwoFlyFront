@@ -19,12 +19,17 @@ function RegistrationForm(props) {
     console.log(`Password: ${password}`);
 
     axios
-      .post("http://localhost:8080/users/register", {
-        firstName,
-        lastName,
-        email,
-        password,
-      })
+      .post(
+        `${
+          typeof process === "undefined" ? "/api" : "http://localhost:8080"
+        }/users/register`,
+        {
+          firstName,
+          lastName,
+          email,
+          password,
+        }
+      )
       .then(function (res) {
         console.log("RES:", res);
         setFirstName("");
