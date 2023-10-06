@@ -27,7 +27,9 @@ function App() {
   const checkUser = async () => {
     try {
       const response = await axios.get(
-        `${!process ? "/api" : "http://localhost:8080"}/users/user`,
+        `${
+          typeof process === "undefined" ? "/api" : "http://localhost:8080"
+        }/users/user`,
         {
           withCredentials: true,
         }

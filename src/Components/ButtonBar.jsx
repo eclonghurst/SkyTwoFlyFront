@@ -51,7 +51,9 @@ function ButtonBar() {
     const indexArr = ukAirportData.indexOf(arrival);
     try {
       const res = await axios.get(
-        `${!process ? "/api" : "http://localhost:8080"}/flights/getOneWay/`,
+        `${
+          typeof process === "undefined" ? "/api" : "http://localhost:8080"
+        }/flights/getOneWay/`,
         {
           params: {
             fly_to: airportData[indexArr].iata_code,
