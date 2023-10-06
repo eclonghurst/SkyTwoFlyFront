@@ -18,9 +18,7 @@ function Flight(props) {
 
   const bookFlight = async () => {
     const userRes = await axios.get(
-      `${
-        process.env.NODE_ENV === "production" ? "/api" : "http://localhost:8080"
-      }/users/user`,
+      `${!process.env.NODE_ENV ? "/api" : "http://localhost:8080"}/users/user`,
       {
         withCredentials: true,
       }
@@ -31,14 +29,14 @@ function Flight(props) {
     }
     const userIdRes = await axios.get(
       `${
-        process.env.NODE_ENV === "production" ? "/api" : "http://localhost:8080"
+        !process.env.NODE_ENV ? "/api" : "http://localhost:8080"
       }/users/getUserID/` + userRes.data,
       { withCredentials: true }
     );
 
     const bookRes = await axios.post(
       `${
-        process.env.NODE_ENV === "production" ? "/api" : "http://localhost:8080"
+        !process.env.NODE_ENV ? "/api" : "http://localhost:8080"
       }/bookings/create`,
       {
         flightTo: props.destination,

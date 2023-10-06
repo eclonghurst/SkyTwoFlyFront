@@ -28,9 +28,7 @@ function App() {
     try {
       const response = await axios.get(
         `${
-          process.env.NODE_ENV === "production"
-            ? "/api"
-            : "http://localhost:8080"
+          !process.env.NODE_ENV ? "/api" : "http://localhost:8080"
         }/users/user`,
         {
           withCredentials: true,

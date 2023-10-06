@@ -24,9 +24,7 @@ function FlightTicket() {
     try {
       const emailRes = await axios.get(
         `${
-          process.env.NODE_ENV === "production"
-            ? "/api"
-            : "http://localhost:8080"
+          !process.env.NODE_ENV ? "/api" : "http://localhost:8080"
         }/users/user`,
         {
           withCredentials: true,
@@ -42,9 +40,7 @@ function FlightTicket() {
     try {
       const idRes = await axios.get(
         `${
-          process.env.NODE_ENV === "production"
-            ? "/api"
-            : "http://localhost:8080"
+          !process.env.NODE_ENV ? "/api" : "http://localhost:8080"
         }/users/getUserID/` + email,
         {
           withCredentials: true,
@@ -60,9 +56,7 @@ function FlightTicket() {
     try {
       const passengerData = await axios.get(
         `${
-          process.env.NODE_ENV === "production"
-            ? "/api"
-            : "http://localhost:8080"
+          !process.env.NODE_ENV ? "/api" : "http://localhost:8080"
         }/users/getUserDetails/` + id,
         {
           withCredentials: true,
@@ -78,9 +72,7 @@ function FlightTicket() {
     try {
       const bookingsRes = await axios.get(
         `${
-          process.env.NODE_ENV === "production"
-            ? "/api"
-            : "http://localhost:8080"
+          !process.env.NODE_ENV ? "/api" : "http://localhost:8080"
         }/bookings/getall/` + id,
         {
           withCredentials: true,

@@ -52,9 +52,7 @@ function ButtonBar() {
     try {
       const res = await axios.get(
         `${
-          process.env.NODE_ENV === "production"
-            ? "/api"
-            : "http://localhost:8080"
+          !process.env.NODE_ENV ? "/api" : "http://localhost:8080"
         }/flights/getOneWay/`,
         {
           params: {
