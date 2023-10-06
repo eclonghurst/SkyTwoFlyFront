@@ -36,7 +36,7 @@ function LoginForm(props) {
       setError(
         "Please check your password or register if you do not have an account!"
       );
-      console.error("There was an error!", err);
+      console.error("There was an error! ", err);
     }
   };
 
