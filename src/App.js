@@ -27,9 +27,7 @@ function App() {
   const checkUser = async () => {
     try {
       const response = await axios.get(
-        `${
-          !process.env.NODE_ENV ? "/api" : "http://localhost:8080"
-        }/users/user`,
+        `${!process ? "/api" : "http://localhost:8080"}/users/user`,
         {
           withCredentials: true,
         }
