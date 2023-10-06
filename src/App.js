@@ -51,7 +51,6 @@ function App() {
         <Route path="/Flights" element={<FlightsPage />} />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/Profile" element={<Profile />} />
-        <Route path="/flight" element={<Flight />} />
         <Route path="/BookingPage" element={<BookingPage />} />
       </Routes>
       <Footer />
