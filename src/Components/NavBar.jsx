@@ -12,11 +12,7 @@ const NavBar = (props) => {
   const handleLogout = async () => {
     try {
       const response = await axios.post(
-        `${
-          process.env.NODE_ENV === "production"
-            ? "/api"
-            : "http://localhost:8080"
-        }/logout`,
+        `${!process.env.NODE_ENV ? "/api" : "http://localhost:8080"}/logout`,
         {
           withCredentials: true,
         }

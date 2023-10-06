@@ -23,11 +23,7 @@ function LoginForm(props) {
 
     try {
       const response = await axios.post(
-        `${
-          process.env.NODE_ENV === "production"
-            ? "/api"
-            : "http://localhost:8080"
-        }/login`,
+        `${!process.env.NODE_ENV ? "/api" : "http://localhost:8080"}/login`,
         loginForm,
         { withCredentials: true }
       );
