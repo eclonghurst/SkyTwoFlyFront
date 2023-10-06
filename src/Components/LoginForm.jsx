@@ -32,7 +32,7 @@ function LoginForm(props) {
       if (response.status === 200) {
         props.setIsVisible(() => false);
         props.setLoggedIn(() => true);
-        navigate("/Profile");
+        navigate("/");
       }
     } catch (err) {
       setError(
