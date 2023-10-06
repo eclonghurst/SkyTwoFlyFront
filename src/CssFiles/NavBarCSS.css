@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "SkyRegular";
+  src: url(./SkyRegular.ttf);
+}
+@font-face {
+  font-family: "SkyBold";
+  src: url(./SkyBold.ttf);
+}
+@font-face {
+  font-family: "SkyMedium";
+  src: url(./SkyMedium.ttf);
+}
+@font-face {
+  font-family: "SkyLight";
+  src: url(./SkyLight.ttf);
+}
+
+nav.navbar {
+  display: flex;
+  background: linear-gradient(
+    90deg,
+    rgba(29, 0, 65, 1) 0%,
+    rgba(121, 9, 110, 1) 50%,
+    rgba(136, 42, 177, 1) 100%
+  );
+  padding-top: 25px;
+  justify-content: center;
+}
+
+#nav-brand {
+  color: white;
+  :active {
+    color: white;
+  }
+}
+
+a.navbar-brand {
+  font-family: "SkyBold";
+  font-style: bold;
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: bold;
+  padding-left: 40px;
+}
+
+#navbar-container {
+  display: flex;
+  justify-content: center;
+}
+
+a.navbar-brand:hover {
+  color: rgb(242, 219, 255);
+}
+
+a.navbar-brand:active {
+  color: white;
+}
+
+a.nav-link {
+  color: white;
+  font-family: "SkyMedium";
+}
+
+.brand-logo {
+  height: 30px;
+  width: auto;
+  margin-right: 10px;
+}
+
+ul.navbar-nav {
+  padding-right: 15px;
+  padding-left: 15px;
+  :hover {
+    color: rgb(255, 226, 167);
+  }
+}
+
+.accountIcon {
+  margin-right: 20px;
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: center;
+    padding-left: 900px;
+  }
+}
+
+.navbar-logo {
+  height: 75px;
+  width: 120px;
+  padding-left: 15px;
+}

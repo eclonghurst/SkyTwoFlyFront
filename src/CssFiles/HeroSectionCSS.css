@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "SkyRegular";
+  src: url(./SkyRegular.ttf);
+}
+@font-face {
+  font-family: "SkyBold";
+  src: url(./SkyBold.ttf);
+}
+@font-face {
+  font-family: "SkyMedium";
+  src: url(./SkyMedium.ttf);
+}
+@font-face {
+  font-family: "SkyLight";
+  src: url(./SkyLight.ttf);
+}
+
+.heroTaglineContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+}
+
+.heroTagline {
+  font-family: "SkyMedium";
+  color: purple;
+}

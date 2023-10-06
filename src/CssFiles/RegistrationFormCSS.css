@@ -1,0 +1,163 @@
+@font-face {
+  font-family: "SkyRegular";
+  src: url(./SkyRegular.ttf);
+}
+@font-face {
+  font-family: "SkyBold";
+  src: url(./SkyBold.ttf);
+}
+@font-face {
+  font-family: "SkyMedium";
+  src: url(./SkyMedium.ttf);
+}
+@font-face {
+  font-family: "SkyLight";
+  src: url(./SkyLight.ttf);
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  color: #3a3b3c;
+}
+
+.backdrop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #777;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #777;
+}
+
+p {
+  margin-bottom: 20px;
+  color: #777;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.btn {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.fade-in {
+  animation: fadeIn 1.5s forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.toggle-form-button {
+  background-color: transparent;
+  color: #4caf50;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.toggle-form-button:hover {
+  text-decoration: none;
+}
+
+.FormTitle {
+  font-family: "SkyBold";
+  font-weight: bold;
+  color: #3a3b3c;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.error-text{
+  color: red;
+  font-weight: bold;
+}

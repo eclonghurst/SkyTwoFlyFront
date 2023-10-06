@@ -1,0 +1,42 @@
+.flight-pass {
+    border: 1px dashed #000;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #f7f7f7;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+.flight-pass-header {
+    text-align: center;
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+
+/* .qr-code {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+} */
+
+.loading {
+    animation: loadingAnimation 1.5s infinite alternate;
+    color: #888;
+}
+
+@keyframes loadingAnimation {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}

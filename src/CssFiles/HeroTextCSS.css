@@ -1,0 +1,19 @@
+.heroText-outer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px 0px 20px 0px;
+}
+
+.heroText-container {
+  width: 700px;
+  color: purple;
+}
+
+.heroText-header {
+  padding-bottom: 10px;
+}
+
+.heroText-body {
+}

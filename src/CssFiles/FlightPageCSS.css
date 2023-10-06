@@ -1,0 +1,9 @@
+.flight-page-container {
+  display: flex;
+  margin: 0px 180px 0px 180px;
+}
+
+.flight-container {
+  flex-direction: column;
+  flex-grow: 2;
+}

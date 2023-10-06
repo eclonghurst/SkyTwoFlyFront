@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "SkyRegular";
+  src: url(./SkyRegular.ttf);
+}
+@font-face {
+  font-family: "SkyBold";
+  src: url(./SkyBold.ttf);
+}
+@font-face {
+  font-family: "SkyMedium";
+  src: url(./SkyMedium.ttf);
+}
+@font-face {
+  font-family: "SkyLight";
+  src: url(./SkyLight.ttf);
+}
+
+.flight-container {
+  display: flex;
+  flex-grow: 2;
+  margin-top: 10px;
+}
+
+.travel-header {
+  margin-left: 180px;
+  margin-top: 50px;
+}
+
+.flight-panel {
+  display: flex;
+  justify-content: flex-start;
+  border: 2px solid;
+  margin-top: 70px;
+  margin-right: 30px;
+  margin-left: 30px;
+  border-radius: 12px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.container-airline-details {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 9px; */
+}
+
+.airline-logo {
+  margin-left: 10px;
+}
+
+.container-flight-details {
+  display: flex;
+
+  flex-grow: 3;
+  justify-content: center;
+  align-items: center;
+}
+
+.departure,
+.destination {
+  flex-grow: 1;
+  align-items: center;
+  text-align: center;
+}
+
+.container-flight-details-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  border-left: solid 2px;
+}
+
+.book-button {
+  color: white;
+  background: rgba(136, 42, 177, 1);
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.book-button:hover {
+  background: #ff91ee;
+}
+
+.airline-logo {
+  padding: 5px;
+}
+
+.aircraft-icon {
+  width: 30px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "SkyMedium";
+}
